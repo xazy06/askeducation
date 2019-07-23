@@ -1,27 +1,34 @@
 <template>
     <div class="main-wrapper clearfix">
         <sidebar/>
-        <main class="b-aside">
+        <bmain class="b-aside">
             <router-view class="content"/>
-        </main>
-
+            <bfooter/>
+        </bmain>
     </div>
 </template>
 
 <script>
     import sidebar from '@/views/components/sidebar'
-    import main from '@/views/components/main'
+    import bmain from '@/views/components/bmain'
+    import bfooter from '@/views/components/bfooter'
 
     export default {
         name: 'layout',
         components: {
             sidebar,
-            main
+            bmain,
+            bfooter
         }
     }
 </script>
 
 <style lang="scss">
+    .content {
+        height: 100%;
+        padding: 126px 14px 640px;
+    }
+
     .main-wrapper {
         height: 100%;
     }

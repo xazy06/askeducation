@@ -17,6 +17,14 @@ export default new Router({
   mode: 'history',
   routes: [
     route('/', 'home'),
+    route('/news', 'news'),
+    route('/about', 'about'),
+    route('/programs', 'programs'),
+    route('/lang', 'programs'),
+    route('/middle', 'programs'),
+    route('/high', 'programs'),
+    route('/contacts', 'contacts'),
+    route('/sheets', 'contacts'),
     //route('/users', 'users', { requiresAuth: true })
     route('/users', 'users')
   ]
