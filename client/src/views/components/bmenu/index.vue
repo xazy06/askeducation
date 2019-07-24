@@ -17,10 +17,6 @@
         return {
             items: [
                 {
-                    name: 'Программы',
-                    to: 'programs'
-                },
-                {
                     name: 'Языковые курсы',
                     to: 'lang'
                 },
@@ -38,7 +34,7 @@
                 },
                 {
                     name: 'Статьи',
-                    to: 'sheets'
+                    to: 'articles'
                 },
                 {
                     name: 'О нас',

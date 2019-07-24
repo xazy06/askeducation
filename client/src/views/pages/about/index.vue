@@ -1,12 +1,23 @@
 <template>
   <div>
-    <h1>О нас</h1>
+    <page-top>
+      <h1 class="red s-uppercase">О нас</h1>
+    </page-top>
+    <page>
+
+    </page>
   </div>
 </template>
 
 <script>
+import pageTop from '@/views/components/pageTop'
+import page from '@/views/components/page'
 export default {
   name: 'home',
+  components: {
+      pageTop,
+      page
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -17,18 +28,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

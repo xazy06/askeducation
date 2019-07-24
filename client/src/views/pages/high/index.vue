@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-top>
-      <h1 class="red s-uppercase">Контакты</h1>
+      <h1 class="red s-uppercase">Высшее образование</h1>
     </page-top>
     <page>
 

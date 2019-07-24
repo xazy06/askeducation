@@ -1,9 +1,13 @@
 <template>
-    <div class="main-wrapper clearfix">
+    <div class="main-wrapper clear">
         <sidebar/>
         <bmain class="b-aside">
-            <router-view class="content"/>
+          <div class="content-outer">
+            <div class="content">
+              <router-view />
+            </div>
             <bfooter/>
+          </div>
         </bmain>
     </div>
 </template>
@@ -24,27 +28,25 @@
 </script>
 
 <style lang="scss">
-    .content {
-        height: 100%;
-        padding: 126px 14px 640px;
-    }
+  .content-outer {
+    height: 100%;
+    min-height: 100%;
+    overflow: auto;
+  }
+  .content {
+    margin-bottom: 640px;
+  }
 
-    .main-wrapper {
-        height: 100%;
-    }
+  .main-wrapper {
+    height: 100%;
+    overflow: hidden;
+  }
 
-    .b-sidebar {
-        width: 339px;
-        float:left;
-        background-color: #f7f7f7;
-        height:100%;
-    }
-
-    .b-aside {
-        margin: 0 0 0 339px;
-        overflow: hidden;
-        height:100%;
-        background-color: #fff;
-    }
+  .b-aside {
+      margin: 0 0 0 339px;
+      overflow: hidden;
+      height:100%;
+      background-color: #fff;
+  }
 
 </style>

@@ -19,12 +19,11 @@ export default new Router({
     route('/', 'home'),
     route('/news', 'news'),
     route('/about', 'about'),
-    route('/programs', 'programs'),
-    route('/lang', 'programs'),
-    route('/middle', 'programs'),
-    route('/high', 'programs'),
+    route('/lang', 'lang'),
+    route('/middle', 'middle'),
+    route('/high', 'high'),
     route('/contacts', 'contacts'),
-    route('/sheets', 'contacts'),
+    route('/articles', 'articles'),
     //route('/users', 'users', { requiresAuth: true })
     route('/users', 'users')
   ]

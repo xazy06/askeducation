@@ -20,11 +20,16 @@
 </script>
 
 <style scoped lang="scss">
-    .b-sidebar {
-        padding: 73px 30px 0 57px;
-    }
+  .b-sidebar {
+    width: 339px;
+    float:left;
+    background-color: #f7f7f7;
+    height:100%;
+    padding: 73px 30px 0 57px;
+  }
 
-    .b-logo {
-        margin-bottom: 40px;
-    }
+
+  .b-logo {
+      margin-bottom: 40px;
+  }
 </style>
