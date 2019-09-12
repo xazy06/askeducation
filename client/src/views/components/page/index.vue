@@ -1,12 +1,17 @@
 <template>
   <div class="b-page">
+    <breadcrumbs></breadcrumbs>
     <slot/>
   </div>
 </template>
 
 <script>
+  import breadcrumbs from '@/views/components/breadcrumbs'
     export default {
-        name: "page"
+        name: "page",
+        components: {
+            breadcrumbs
+        }
     }
 </script>
 

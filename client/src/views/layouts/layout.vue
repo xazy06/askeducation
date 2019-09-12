@@ -1,5 +1,5 @@
 <template>
-    <div class="main-wrapper clear">
+    <div class="main-wrapper clearfix">
         <sidebar/>
         <bmain class="b-aside">
           <div class="content-outer">

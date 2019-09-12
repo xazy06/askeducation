@@ -17,13 +17,13 @@ export default new Router({
   mode: 'history',
   routes: [
     route('/', 'home'),
-    route('/news', 'news'),
-    route('/about', 'about'),
-    route('/lang', 'lang'),
-    route('/middle', 'middle'),
-    route('/high', 'high'),
-    route('/contacts', 'contacts'),
-    route('/articles', 'articles'),
+    route('/news', 'news', {name: 'Новости'}),
+    route('/about', 'about', {name: 'О нас'}),
+    route('/lang', 'lang', {name: 'Языковые курсы'}),
+    route('/middle', 'middle', {name: 'Среднее образование'}),
+    route('/high', 'high', {name: 'Высшее образование'}),
+    route('/contacts', 'contacts', {name: 'Контакты'}),
+    route('/articles', 'articles', {name: 'Статьи'}),
     //route('/users', 'users', { requiresAuth: true })
     route('/users', 'users')
   ]

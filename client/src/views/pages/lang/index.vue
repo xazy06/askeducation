@@ -4,7 +4,9 @@
       <h1 class="red s-uppercase">Языковые курсы</h1>
     </page-top>
     <page>
+      <lang-filter></lang-filter>
 
+      <group-header sub="интенсив">Язык летом</group-header>
     </page>
   </div>
 </template>
@@ -12,11 +14,15 @@
 <script>
     import pageTop from '@/views/components/pageTop'
     import page from '@/views/components/page'
+    import langFilter from '@/views/components/langFilter'
+    import groupHeader from '@/views/components/groupHeader'
     export default {
         name: 'contacts',
         components: {
-            pageTop,
-            page
+          pageTop,
+          page,
+          langFilter,
+          groupHeader
         },
         data () {
             return {
