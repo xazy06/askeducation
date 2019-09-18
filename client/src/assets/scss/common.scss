@@ -15,7 +15,7 @@ body {
 
 body {
   margin: 0;
-  font-family: "Formular-lignt", sans-serif;
+  font-family: "Formular-light";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -386,4 +386,33 @@ template {
 
 .s-uppercase {
   text-transform: uppercase;
+}
+
+.b-p__inner {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.form-control.s-bl {
+  border-radius: 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+
+.s-mb_20 {
+  margin-bottom: 20px;
+}
+
+.s-mb_30 {
+  margin-bottom: 30px;
+}
+
+.s-mb_40 {
+  margin-bottom: 30px;
+}
+
+.btn.btn-primary {
+  background-color: #f04e23;
+  border-color: #f04e23;
 }
