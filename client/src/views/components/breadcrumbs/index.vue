@@ -1,13 +1,17 @@
 <template>
     <ul class="b-breadcrumbs clearfix">
       <li class="b-breadcrumbs_item">
-        <a class="b-breadcrumbs_item-link">Главная</a>
+        <router-link class="b-breadcrumbs_item-link" :to="'/'" exact>
+          Главная
+        </router-link>
       </li>
       <li class="b-breadcrumbs_item">
         <span class="b-breadcrumbs_item-link delimiter">|</span>
       </li>
       <li class="b-breadcrumbs_item">
-        <a class="b-breadcrumbs_item-link">{{ $route.meta.name }}</a>
+        <router-link class="b-breadcrumbs_item-link" :to="''" active-class="active" exact>
+          {{ $route.meta.name }}
+        </router-link>
       </li>
     </ul>
 </template>

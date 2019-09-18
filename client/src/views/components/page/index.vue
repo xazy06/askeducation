@@ -19,5 +19,6 @@
   .b-page {
     padding: 0 14px;
     color: #230000;
+    /*font-size: 20px;*/
   }
 </style>

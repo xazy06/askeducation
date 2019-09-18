@@ -1,11 +1,9 @@
 <template>
   <div class="b-contact-form--wrapper clearfix">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3"></div>
 
-      </div>
-
-      <div class="col-md-8">
+      <div class="col-md-9">
         <div class="b-contact-form">
           <div class="b-contact-form--head">
             Оставьте свои контакты, чтобы <span>мы сами связались</span> с вами.
@@ -69,8 +67,6 @@
     }
 
     &--head {
-      width: 745px;
-      height: 141px;
       color: #bebebe;
       font-size: 45px;
       font-weight: 100;

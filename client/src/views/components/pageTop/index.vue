@@ -22,4 +22,17 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bebebe',GradientType=1 ); /* IE6-9 */
     margin-bottom: 10px;
   }
+
+  .h-sub {
+    color: #230000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.28px;
+
+    a {
+      color: #f04e23;
+    }
+  }
 </style>
