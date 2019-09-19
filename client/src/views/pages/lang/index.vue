@@ -17,7 +17,7 @@
     import langFilter from '@/views/components/langFilter'
     import groupHeader from '@/views/components/groupHeader'
     export default {
-        name: 'contacts',
+        name: 'lang',
         components: {
           pageTop,
           page,

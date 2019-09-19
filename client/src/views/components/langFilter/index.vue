@@ -80,6 +80,7 @@
         letter-spacing: 1.6px;
         text-transform: uppercase;
         line-height: 25px;
+        font-family: "Formular-bold";
       }
 
       &--bottom {

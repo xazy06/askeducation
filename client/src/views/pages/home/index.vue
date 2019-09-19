@@ -5,6 +5,7 @@
     </page-top>
     <page>
 
+      <contact-form/>
     </page>
   </div>
 </template>
@@ -12,11 +13,13 @@
 <script>
     import pageTop from '@/views/components/pageTop'
     import page from '@/views/components/page'
+    import contactForm from '@/views/components/contactForm'
     export default {
-        name: 'contacts',
+        name: 'home',
         components: {
             pageTop,
-            page
+            page,
+            contactForm
         },
         data () {
             return {

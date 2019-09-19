@@ -72,6 +72,7 @@
     &-courses {
       list-style: none;
       margin-left: 100px;
+      font-family: "Formular-bold";
     }
 
     &-courses-item {

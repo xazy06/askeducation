@@ -17,7 +17,7 @@
 
 <style scoped>
   .b-page {
-    padding: 0 14px;
+    padding: 0 70px 0 14px;
     color: #230000;
     /*font-size: 20px;*/
   }

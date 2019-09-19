@@ -62,7 +62,6 @@
     /*text-align: left;*/
 
     &--wrapper {
-      padding-right: 70px;
       margin-bottom: 74px;
     }
 
