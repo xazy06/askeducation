@@ -4,15 +4,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
+import router from './router'
 
-const configDb = require('./config/mongoose.config');
-const mongoose = require('mongoose');
+const app = express();
 
-var app = express();
-
-mongoose.Promise = global.Promise;
 mongoose.connect(configDb.dbURL, configDb.dbOptions);
 mongoose.connection
   .once('open', () => {
