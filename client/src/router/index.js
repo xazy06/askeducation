@@ -11,7 +11,7 @@ function route (path, view, meta) {
   }
 }
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',

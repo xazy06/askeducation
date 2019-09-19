@@ -3,5 +3,6 @@ import mongoose from 'mongoose'
 
 mongoose.Promise = global.Promise;
 const db = mongoose.connect(configDb.dbURL, configDb.dbOptions);
+const connection = mongoose.connection;
 
-export default db;
+export default {db, connection};
