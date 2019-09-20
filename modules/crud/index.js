@@ -38,7 +38,7 @@ class CRUD extends ApiController {
       name: req.body.name
     });
 
-    instance.save((err) => super.response(res, err, 200, instance.id));
+    return instance.save((err) => super.response(res, err, 200, instance.id));
   }
 
   put(req, res){
@@ -50,12 +50,9 @@ class CRUD extends ApiController {
         return super.response(res, 'not found exception', 404);
       }
 
-      Object.keys(req.body).forEach((key) => {
-        instance[key] = req.body[key];
-      });
+      Object.keys(req.body).forEach(key => instance[key] = req.body[key]);
 
-      instance.save((err) => super.response(res, err, err && 500 || 200, instance.id));
-
+      return instance.save((err) => super.response(res, err, err && 500 || 200, instance.id));
     });
   }
 
