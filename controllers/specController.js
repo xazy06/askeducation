@@ -1,5 +1,5 @@
 import ApiController from './apiController'
-import spec from '../models/specsModel'
+import model from '../models/specsModel'
 
 class SpecController extends ApiController {
   constructor(){
@@ -7,20 +7,19 @@ class SpecController extends ApiController {
   }
 
   get (req, res) {
-    return spec.crud.get(req, res);
+    return model.crud.get(req, res);
   }
 
   delete(req, res) {
-    return spec.crud.delete(req, res);
+    return model.crud.delete(req, res);
   }
 
   post(req, res) {
-    return spec.crud.post(req, res);
-
+    return model.crud.post(req, res);
   }
 
   put(req, res) {
-    return spec.crud.post(req, res);
+    return model.crud.put(req, res);
   }
 }
 

@@ -18,18 +18,13 @@ app.use(sassMiddleware({
   indentedSyntax: true, // true = .sass and false = .scss
   sourceMap: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
-db.connection
-  .once('open', () => {
-    console.log(`Mongoose - successful connection ...`);
-    app.listen(process.env.PORT || PORT, () => console.log(`Server start on port ${process.env.PORT||PORT} ...`))
-  })
-  .on('error', error => console.warn(error));
-
+db.connection.once('open', () => {
+  console.log(`Mongoose - successful connection ...`);
+  app.listen(process.env.PORT || PORT, () => console.log(`Server start on port ${process.env.PORT||PORT} ...`));
+}).on('error', error => console.warn(error));
 
 module.exports = app;
