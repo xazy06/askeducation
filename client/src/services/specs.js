@@ -1,6 +1,6 @@
 import api from '@/services/api'
 export default {
-  fetchPosts () {
-    return api().get('users')
+  get () {
+    return api().get('specs')
   }
 }

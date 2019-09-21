@@ -1,5 +1,8 @@
 module.exports = {
-    port: 8081,
-    dbURL: 'mongodb://localhost/articles'
-    //,    dbOptions: { useMongoClient: true }
-}
+    port: 27017,
+    dbURL: 'mongodb://localhost/ask',
+    dbOptions: {
+        //useMongoClient: true
+        useNewUrlParser: true
+    }
+};
