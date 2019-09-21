@@ -6,10 +6,10 @@
 </template>
 
 <script>
-    export default {
-        name: "groupHeader",
-        props: ['sub']
-    }
+export default {
+  name: 'groupHeader',
+  props: ['sub']
+}
 </script>
 
 <style scoped lang="scss">

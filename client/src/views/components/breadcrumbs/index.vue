@@ -17,14 +17,14 @@
 </template>
 
 <script>
-    export default {
-        name: "breadcrumbs",
-        watch: {
-            '$route' (to, from) {
-                console.log(to, from);
-            }
-        }
+export default {
+  name: 'breadcrumbs',
+  watch: {
+    '$route' (to, from) {
+      console.log(to, from)
     }
+  }
+}
 </script>
 
 <style scoped lang="scss">

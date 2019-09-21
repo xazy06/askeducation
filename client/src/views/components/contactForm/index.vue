@@ -51,9 +51,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'contactForm'
-  }
+export default {
+  name: 'contactForm'
+}
 </script>
 
 <style scoped lang="scss">

@@ -6,9 +6,9 @@ import App from './App'
 import router from './router'
 import './custom.scss'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
-Vue.use(BootstrapVue);
+Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,4 +16,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-});
+})

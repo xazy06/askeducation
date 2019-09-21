@@ -22,9 +22,9 @@
 </template>
 
 <script>
-    export default {
-        name: "bfooter"
-    }
+export default {
+  name: 'bfooter'
+}
 </script>
 
 <style scoped lang="scss">

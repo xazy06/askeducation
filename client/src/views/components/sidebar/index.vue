@@ -7,16 +7,16 @@
 </template>
 
 <script>
-    import bmenu from '@/views/components/bmenu'
-    import sidebarBottom from '@/views/components/sidebar/sidebar-bottom'
+import bmenu from '@/views/components/bmenu'
+import sidebarBottom from '@/views/components/sidebar/sidebar-bottom'
 
-    export default {
-        name: "sidebar",
-        components: {
-            bmenu,
-            sidebarBottom
-        }
-    }
+export default {
+  name: 'sidebar',
+  components: {
+    bmenu,
+    sidebarBottom
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -27,7 +27,6 @@
     height:100%;
     padding: 73px 30px 0 57px;
   }
-
 
   .b-logo {
       margin-bottom: 40px;

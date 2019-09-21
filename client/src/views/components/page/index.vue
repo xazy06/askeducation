@@ -6,13 +6,13 @@
 </template>
 
 <script>
-  import breadcrumbs from '@/views/components/breadcrumbs'
-    export default {
-        name: "page",
-        components: {
-            breadcrumbs
-        }
-    }
+import breadcrumbs from '@/views/components/breadcrumbs'
+export default {
+  name: 'page',
+  components: {
+    breadcrumbs
+  }
+}
 </script>
 
 <style scoped>

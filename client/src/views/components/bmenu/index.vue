@@ -1,7 +1,7 @@
 <template>
   <div class="b-menu-wrapper">
     <ul class="b-menu">
-      <li v-for="item in items" class="b-menu-item">
+      <li v-bind:key="item.to" v-for="item in items" class="b-menu-item">
         <router-link class="b-menu-item_a" :to="item.to" active-class="active" exact>
           {{item.name}}
         </router-link>
@@ -11,43 +11,43 @@
 </template>
 
 <script>
-  export default {
-    name: "bmenu",
-    data() {
-        return {
-            items: [
-                {
-                    name: 'Языковые курсы',
-                    to: 'lang'
-                },
-                {
-                    name: 'Среднее образование',
-                    to: 'middle'
-                },
-                {
-                    name: 'Высшее образование',
-                    to: 'high'
-                },
-                {
-                    name: 'Новости',
-                    to: 'news'
-                },
-                {
-                    name: 'Статьи',
-                    to: 'articles'
-                },
-                {
-                    name: 'О нас',
-                    to: 'about'
-                },
-                {
-                    name: 'Контакты',
-                    to: 'contacts'
-                }
-            ]
+export default {
+  name: 'bmenu',
+  data () {
+    return {
+      items: [
+        {
+          name: 'Языковые курсы',
+          to: 'lang'
+        },
+        {
+          name: 'Среднее образование',
+          to: 'middle'
+        },
+        {
+          name: 'Высшее образование',
+          to: 'high'
+        },
+        {
+          name: 'Новости',
+          to: 'news'
+        },
+        {
+          name: 'Статьи',
+          to: 'articles'
+        },
+        {
+          name: 'О нас',
+          to: 'about'
+        },
+        {
+          name: 'Контакты',
+          to: 'contacts'
         }
+      ]
     }
   }
+}
 </script>
 
 <style scoped lang="scss">

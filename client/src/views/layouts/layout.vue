@@ -13,18 +13,18 @@
 </template>
 
 <script>
-    import sidebar from '@/views/components/sidebar'
-    import bmain from '@/views/components/bmain'
-    import bfooter from '@/views/components/bfooter'
+import sidebar from '@/views/components/sidebar'
+import bmain from '@/views/components/bmain'
+import bfooter from '@/views/components/bfooter'
 
-    export default {
-        name: 'layout',
-        components: {
-            sidebar,
-            bmain,
-            bfooter
-        }
-    }
+export default {
+  name: 'layout',
+  components: {
+    sidebar,
+    bmain,
+    bfooter
+  }
+}
 </script>
 
 <style lang="scss">

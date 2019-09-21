@@ -13,9 +13,9 @@
 </template>
 
 <script>
-    export default {
-        name: "sidebar-bottom"
-    }
+export default {
+  name: 'sidebar-bottom'
+}
 </script>
 
 <style scoped lang="scss">

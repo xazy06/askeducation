@@ -24,7 +24,7 @@ export default new Router({
     route('/high', 'high', {name: 'Высшее образование'}),
     route('/contacts', 'contacts', {name: 'Контакты'}),
     route('/articles', 'articles', {name: 'Статьи'}),
-    //route('/users', 'users', { requiresAuth: true })
+    // route('/users', 'users', { requiresAuth: true })
     route('/users', 'users')
   ]
 })

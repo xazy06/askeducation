@@ -51,9 +51,9 @@
 </template>
 
 <script>
-    export default {
-        name: "langFilter"
-    }
+export default {
+  name: 'langFilter'
+}
 </script>
 
 <style scoped lang="scss">
