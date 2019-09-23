@@ -1,3 +1,6 @@
+// SPECS
+export const SPECS = 'SPECS'
+
 export const REFRESH_TOKEN = 'REFRESH_TOKEN'
 export const ERROR = 'ERROR'
 export const CLEAR_ERROR = 'CLEAR_ERROR'

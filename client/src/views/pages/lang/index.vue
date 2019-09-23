@@ -33,27 +33,20 @@ export default {
     }
   },
   computed: {
-    ...mapState('tickets', ['statuses', 'static'])
+    ...mapState('specs', ['specs'])
   },
 
   methods: {
-    ...mapActions('tickets', {
-      getNotifications: action.GET_NOTIFICATIONS,
-      getStatic: action.GET_STATIC,
-      getDetails: action.GET_DETAILS,
-      getComments: action.GET_COMMENTS
-    }),
-    showDetails (item) {
-      this.getDetails(item)
-      this.getComments(item)
-      this.$modal.show('not-available')
-    }
+    ...mapActions('specs', {
+      getSpecs: action.GET_SPECS
+    })
   },
   created () {
-    console.log('tickets created')
+    console.log('created')
   },
   mounted () {
-    this.getStatic()
+    console.log('mounted')
+    this.getSpecs()
   }
 }
 </script>

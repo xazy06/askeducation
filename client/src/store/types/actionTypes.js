@@ -1,3 +1,6 @@
+// GET_SPECS
+export const GET_SPECS = 'GET_SPECS'
+
 export const LOGIN = 'LOGIN'
 export const REFRESH_JWT_TOKEN = 'REFRESH_JWT_TOKEN'
 export const SEARCH = 'SEARCH'
