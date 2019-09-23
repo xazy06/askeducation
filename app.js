@@ -7,8 +7,10 @@ var router = require('./router/index');
 import db from './db'
 const PORT = 8081;
 const app = express();
+var cors = require('cors');
 
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
