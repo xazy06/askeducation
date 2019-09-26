@@ -1,15 +1,17 @@
 import axios from 'axios'
-import { isUndefined, isNull, omitBy } from 'lodash'
+import {isUndefined, isNull, omitBy} from 'lodash'
 
-axios.defaults.headers.common['Content-Type'] = 'application/json'
-axios.create({
+const instance = axios.create({
+  baseURL: 'http://localhost:8081/api/',
   headers: {
+    'Accept': 'application/json',
     'Content-Type': 'application/json'
   }
 })
 
-const DATA_OPTIONS = {
-}
+instance.defaults.headers.common['Content-Type'] = 'application/json'
+
+const DATA_OPTIONS = {}
 
 function dataOptions (method, params) {
   let options = DATA_OPTIONS
@@ -76,17 +78,17 @@ export function qsValues (params) {
 export function http (method, type, params) {
   params = typeof params === 'string' ? [params] : params
   let data = dataOptions(method, params)
-  return fetch(`/api/${method}`)
+  return instance[type](method).then(response => response.data)
 }
 
-axios.interceptors.request.use((config) => {
-  // console.log(config.data, 'axios')
-  return config
-}, (error) => {
-  // Do something with request error
-  return Promise.reject(error)
-})
-
-axios.interceptors.response.use(response => {
-  return response
-})
+// axios.interceptors.request.use((config) => {
+//   // console.log(config.data, 'axios')
+//   return config
+// }, (error) => {
+//   // Do something with request error
+//   return Promise.reject(error)
+// })
+//
+// axios.interceptors.response.use(response => {
+//   return response
+// })
