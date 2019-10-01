@@ -12,10 +12,11 @@
 
 <script>
 export default {
+  props: ['admin'],
   name: 'bmenu',
   data () {
     return {
-      items: [
+      menuItems: [
         {
           name: 'Языковые курсы',
           to: 'lang'
@@ -44,7 +45,42 @@ export default {
           name: 'Контакты',
           to: 'contacts'
         }
+      ],
+      adminMenuItems: [
+        // {
+        //   name: 'Языковые курсы',
+        //   to: 'lang'
+        // },
+        // {
+        //   name: 'Среднее образование',
+        //   to: 'middle'
+        // },
+        // {
+        //   name: 'Высшее образование',
+        //   to: 'high'
+        // },
+        // {
+        //   name: 'Новости',
+        //   to: 'news'
+        // },
+        // {
+        //   name: 'Статьи',
+        //   to: 'articles'
+        // },
+        {
+          name: 'Языки',
+          to: 'langs'
+        },
+        {
+          name: 'Типы курсов',
+          to: 'types'
+        }
       ]
+    }
+  },
+  computed: {
+    items () {
+      return this.admin ? this.adminMenuItems : this.menuItems
     }
   }
 }
@@ -68,13 +104,13 @@ export default {
       text-transform: uppercase;
       font-size: 19px;
       letter-spacing: 2px;
-      color: rgb(35,0,0);
+      color: rgb(35, 0, 0);
       font-family: "Formular-bold", sans-serif;
       font-weight: bold;
       padding: 8px 0;
 
       &.active {
-        color: rgb(240,78,35);
+        color: rgb(240, 78, 35);
       }
     }
   }

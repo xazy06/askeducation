@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <layout></layout>
+    <admin-layout :admin="true" v-if="isAdmin"></admin-layout>
+    <layout v-else></layout>
   </div>
 </template>
 
 <script>
 import Layout from '@/views/layouts/layout'
+import AdminLayout from '@/views/layouts/adminLayout'
 export default {
   name: 'App',
   components: {
-    Layout
+    Layout,
+    AdminLayout
+  },
+  computed: {
+    isAdmin () {
+      return this.$route.meta.layout === 'admin'
+    }
   }
 }
 </script>

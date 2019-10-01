@@ -30,31 +30,44 @@ function dataOptions (method, params) {
   return options
 }
 
+function paramsFormat (params) {
+  if (params === undefined) {
+    return {}
+  }
+
+  return JSON.stringify(params)
+}
+
 const validStatuses = [
   200, 201, 202, 203, 204,
   300, 301, 302, 303, 304
 ]
 
 export function checkResponse (response) {
-  if (validStatuses.includes(response.status)) {
-    if (Object.keys(response.data).some(key => key === 'error')) {
-      return Promise.reject(response.data.error)
-    }
-
-    return response.data.result
+  if (response.error === null) {
+    return response.value
   }
 
-  // If not authorized then reset token
-  // and redirect to login page
-  if (response.status === 401) {
-    localStorage.clear()
-    return Promise.reject(new Error('USER_ANONYMOUS'))
-  }
-
-  let err = new Error(response.statusText)
-  err.response = response
-
-  return Promise.reject(err)
+  return response
+  // if (validStatuses.includes(response.status)) {
+  //   if (Object.keys(response.data).some(key => key === 'error')) {
+  //     return Promise.reject(response.data.error)
+  //   }
+  //
+  //   return response.data.result
+  // }
+  //
+  // // If not authorized then reset token
+  // // and redirect to login page
+  // if (response.status === 401) {
+  //   localStorage.clear()
+  //   return Promise.reject(new Error('USER_ANONYMOUS'))
+  // }
+  //
+  // let err = new Error(response.statusText)
+  // err.response = response
+  //
+  // return Promise.reject(err)
 }
 
 export const esc = encodeURIComponent
@@ -77,8 +90,16 @@ export function qsValues (params) {
 
 export function http (method, type, params) {
   params = typeof params === 'string' ? [params] : params
-  let data = dataOptions(method, params)
-  return instance[type](method).then(response => response.data)
+  let data = paramsFormat(params, method)
+
+  if (type === 'delete') {
+    method = `${method}/${params.id}`
+  }
+
+  if (type === 'put') {
+    method = `${method}/${params._id}`
+  }
+  return instance[type](method, data).then(response => response.data)
 }
 
 // axios.interceptors.request.use((config) => {

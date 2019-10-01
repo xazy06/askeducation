@@ -23,5 +23,5 @@ class SpecController extends ApiController {
   }
 }
 
-const specController = new SpecController();
-export default specController;
+const controller = new SpecController();
+export default controller;

@@ -23,5 +23,5 @@ class courseTypesController extends ApiController {
   }
 }
 
-const specController = new courseTypesController();
-export default courseTypesController;
+const controller = new courseTypesController();
+export default controller;

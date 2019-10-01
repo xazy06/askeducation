@@ -34,9 +34,7 @@ class CRUD extends ApiController {
       return super.response(res, 'name is required', 400);
     }
 
-    const instance = new this.model({
-      name: req.body.name
-    });
+    const instance = new this.model(req.body);
 
     return instance.save((err) => super.response(res, err, 200, instance.id));
   }

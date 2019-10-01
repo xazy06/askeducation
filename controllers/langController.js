@@ -23,5 +23,5 @@ class LangsController extends ApiController {
   }
 }
 
-const langsController = new LangsController();
-export default langsController;
+const controller = new LangsController();
+export default controller;

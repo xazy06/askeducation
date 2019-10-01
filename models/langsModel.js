@@ -10,6 +10,6 @@ let lang = {
   model: mongoose.model('lang', schema),
 };
 
-spec.crud = new CRUD(lang.model);
+lang.crud = new CRUD(lang.model);
 
 export default lang;

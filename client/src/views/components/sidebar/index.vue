@@ -1,7 +1,7 @@
 <template>
     <div class="b-sidebar">
         <img class="b-logo" alt="logo" src="@/assets/img/logo.png"/>
-        <bmenu/>
+        <bmenu :admin="admin" />
         <sidebar-bottom/>
     </div>
 </template>
@@ -11,6 +11,7 @@ import bmenu from '@/views/components/bmenu'
 import sidebarBottom from '@/views/components/sidebar/sidebar-bottom'
 
 export default {
+  props: ['admin'],
   name: 'sidebar',
   components: {
     bmenu,
