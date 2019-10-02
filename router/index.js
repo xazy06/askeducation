@@ -13,6 +13,9 @@ import courseTypesController from "../controllers/courseTypesController";
 import langController from "../controllers/langController";
 import cityController from "../controllers/cityController";
 import countryController from "../controllers/countryController";
+import articleController from "../controllers/articleController";
+import newsController from "../controllers/newsController";
+import schoolController from "../controllers/schoolController";
 
 const Router = express.Router();
 
@@ -50,5 +53,23 @@ Router.get('/api/country/:id', countryController.get);
 Router.delete('/api/country/:id', countryController.delete);
 Router.post('/api/country', countryController.post);
 Router.put('/api/country/:id', countryController.put);
+
+Router.get('/api/article', articleController.get);
+Router.get('/api/article/:id', articleController.get);
+Router.delete('/api/article/:id', articleController.delete);
+Router.post('/api/article', articleController.post);
+Router.put('/api/article/:id', articleController.put);
+
+Router.get('/api/news', newsController.get);
+Router.get('/api/news/:id', newsController.get);
+Router.delete('/api/news/:id', newsController.delete);
+Router.post('/api/news', newsController.post);
+Router.put('/api/news/:id', newsController.put);
+
+Router.get('/api/school', schoolController.get);
+Router.get('/api/school/:id', schoolController.get);
+Router.delete('/api/school/:id', schoolController.delete);
+Router.post('/api/school', schoolController.post);
+Router.put('/api/school/:id', schoolController.put);
 
 module.exports = Router;

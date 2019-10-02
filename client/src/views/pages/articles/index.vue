@@ -13,7 +13,7 @@
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
 export default {
-  name: 'contacts',
+  name: 'articles',
   components: {
     pageTop,
     page

@@ -59,14 +59,18 @@ export default {
         //   name: 'Высшее образование',
         //   to: 'high'
         // },
-        // {
-        //   name: 'Новости',
-        //   to: 'news'
-        // },
-        // {
-        //   name: 'Статьи',
-        //   to: 'articles'
-        // },
+        {
+          name: 'Школы',
+          to: 'school'
+        },
+        {
+          name: 'Новости',
+          to: 'news'
+        },
+        {
+          name: 'Статьи',
+          to: 'articles'
+        },
         {
           name: 'Города',
           to: 'cities'

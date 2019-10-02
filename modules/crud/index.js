@@ -30,9 +30,9 @@ class CRUD extends ApiController {
   }
 
   post(req, res){
-    if (!req.body.name) {
-      return super.response(res, 'name is required', 400);
-    }
+    // if (!req.body.name) {
+    //   return super.response(res, 'name is required', 400);
+    // }
 
     const instance = new this.model(req.body);
 

@@ -7,7 +7,9 @@
       <lang-filter></lang-filter>
 
       <div v-for="item in items" v-bind:key="item._id">
-        <group-header sub="интенсив">{{item.name}}</group-header>
+        <router-link to="/">
+          <group-header sub="">{{item.name}}</group-header>
+        </router-link>
       </div>
     </page>
   </div>

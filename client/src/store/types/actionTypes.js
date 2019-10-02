@@ -27,3 +27,21 @@ export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const POST_COUNTRIES = 'POST_COUNTRIES'
 export const DELETE_COUNTRIES = 'DELETE_COUNTRIES'
 export const PUT_COUNTRIES = 'PUT_COUNTRIES'
+
+// ARTICLES
+export const GET_ARTICLES = 'GET_ARTICLES'
+export const POST_ARTICLES = 'POST_ARTICLES'
+export const DELETE_ARTICLES = 'DELETE_ARTICLES'
+export const PUT_ARTICLES = 'PUT_ARTICLES'
+
+// NEWS
+export const GET_NEWS = 'GET_NEWS'
+export const POST_NEWS = 'POST_NEWS'
+export const DELETE_NEWS = 'DELETE_NEWS'
+export const PUT_NEWS = 'PUT_NEWS'
+
+// SCHOOL
+export const GET_SCHOOL = 'GET_SCHOOL'
+export const POST_SCHOOL = 'POST_SCHOOL'
+export const DELETE_SCHOOL = 'DELETE_SCHOOL'
+export const PUT_SCHOOL = 'PUT_SCHOOL'

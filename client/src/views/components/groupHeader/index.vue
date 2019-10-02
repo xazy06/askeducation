@@ -1,7 +1,7 @@
 <template>
   <div class="b-group-head">
     <slot></slot>
-    <span class="b-group-head--sub">{{sub}}</span>
+    <span v-if="sub" class="b-group-head--sub">{{sub}}</span>
   </div>
 </template>
 

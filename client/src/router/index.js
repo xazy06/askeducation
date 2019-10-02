@@ -54,12 +54,36 @@ export default new Router({
         ]
       },
       [
+        children('school', 'school', {
+          name: 'Школы',
+          layout: 'admin',
+          breadcrumb: [
+            {name: 'admin', link: '/admin'},
+            {name: 'Школы', link: 'school'}
+          ]
+        }),
+        children('news', 'news', {
+          name: 'Новости',
+          layout: 'admin',
+          breadcrumb: [
+            {name: 'admin', link: '/admin'},
+            {name: 'Новости', link: 'news'}
+          ]
+        }),
         children('types', 'types', {
           name: 'Тип курсов',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
             {name: 'Типы курсов', link: 'types'}
+          ]
+        }),
+        children('articles', 'articles', {
+          name: 'Статьи',
+          layout: 'admin',
+          breadcrumb: [
+            {name: 'admin', link: '/admin'},
+            {name: 'Статьи', link: 'articles'}
           ]
         }),
         children('langs', 'langs', {
