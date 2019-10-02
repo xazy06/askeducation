@@ -6,7 +6,9 @@
     <page>
       <lang-filter></lang-filter>
 
-      <group-header sub="интенсив">Язык летом</group-header>
+      <div v-for="item in items" v-bind:key="item._id">
+        <group-header sub="интенсив">{{item.name}}</group-header>
+      </div>
     </page>
   </div>
 </template>
@@ -17,7 +19,7 @@ import page from '@/views/components/page'
 import langFilter from '@/views/components/langFilter'
 import groupHeader from '@/views/components/groupHeader'
 import * as action from '@/store/types/actionTypes'
-import { mapState, mapActions } from 'vuex'
+import {mapState, mapActions} from 'vuex'
 
 export default {
   name: 'lang',
@@ -33,12 +35,20 @@ export default {
     }
   },
   computed: {
-    ...mapState('specs', ['specs'])
+    ...mapState('types', ['items']),
+    ...mapState('langs', ['langs']),
+    ...mapState('countries', ['countries'])
   },
 
   methods: {
-    ...mapActions('specs', {
-      getSpecs: action.GET_SPECS
+    ...mapActions('types', {
+      get: action.GET_TYPES
+    }),
+    ...mapActions('langs', {
+      getLangs: action.GET_LANGS
+    }),
+    ...mapActions('countries', {
+      getCountries: action.GET_COUNTRIES
     })
   },
   created () {
@@ -46,7 +56,9 @@ export default {
   },
   mounted () {
     console.log('mounted')
-    this.getSpecs()
+    this.get()
+    this.getLangs()
+    this.getCountries()
   }
 }
 </script>

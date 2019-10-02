@@ -5,12 +5,13 @@
           Главная
         </router-link>
       </li>
-      <li class="b-breadcrumbs_item">
-        <span class="b-breadcrumbs_item-link delimiter">|</span>
-      </li>
-      <li class="b-breadcrumbs_item">
-        <router-link class="b-breadcrumbs_item-link" :to="''" active-class="active" exact>
-          {{ $route.meta.name }}
+<!--      <li class="b-breadcrumbs_item">-->
+<!--        <span class="b-breadcrumbs_item-link delimiter">|</span>-->
+<!--      </li>-->
+      <li v-for="(breadcrumb, idx) in breadcrumbsList" :key="idx" class="b-breadcrumbs_item">
+        <router-link class="b-breadcrumbs_item-link" :to="breadcrumb.link" active-class="active" exact>
+          <span class="b-breadcrumbs_item-link delimiter">|</span>
+          {{ breadcrumb.name }}
         </router-link>
       </li>
     </ul>
@@ -19,10 +20,23 @@
 <script>
 export default {
   name: 'breadcrumbs',
+  data () {
+    return {
+      breadcrumbsList: []
+    }
+  },
+  methods: {
+    updateList () {
+      this.breadcrumbsList = this.$route.meta.breadcrumb;
+    }
+  },
   watch: {
     '$route' (to, from) {
-      console.log(to, from)
+      this.updateList();
     }
+  },
+  mounted () {
+    this.updateList()
   }
 }
 </script>

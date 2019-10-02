@@ -18,7 +18,7 @@
             <tbody>
             <tr v-on:click="select(item)" v-for="item in items" v-bind:key="item._id">
               <td>{{item.name}}</td>
-              <td>{{item.lang}}</td>
+              <td>{{ langName(item.lang) }}</td>
               <td>
                 <b-button v-on:click.stop="remove(item._id)" variant="link">удалить</b-button>
               </td>
@@ -76,6 +76,13 @@ export default {
     ...mapState('langs', ['langs'])
   },
   methods: {
+    langName (id) {
+      if (!id || !this.langs.length) {
+        return ''
+      }
+
+      return this.langs.find(item => item._id === id).name
+    },
     ...mapActions('types', {
       get: action.GET_TYPES,
       _post: action.POST_TYPES,

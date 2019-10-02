@@ -19,31 +19,31 @@ export default {
       menuItems: [
         {
           name: 'Языковые курсы',
-          to: 'lang'
+          to: '/lang'
         },
         {
           name: 'Среднее образование',
-          to: 'middle'
+          to: '/middle'
         },
         {
           name: 'Высшее образование',
-          to: 'high'
+          to: '/high'
         },
         {
           name: 'Новости',
-          to: 'news'
+          to: '/news'
         },
         {
           name: 'Статьи',
-          to: 'articles'
+          to: '/articles'
         },
         {
           name: 'О нас',
-          to: 'about'
+          to: '/about'
         },
         {
           name: 'Контакты',
-          to: 'contacts'
+          to: '/contacts'
         }
       ],
       adminMenuItems: [
