@@ -30,28 +30,21 @@ export default {
     schoolListItem
   },
   computed: {
+    ...mapState('school', ['schools']),
     ...mapState('specs', ['specs'])
   },
   methods: {
-    ...mapActions('specs', {
-      getSpecs: action.GET_SPECS
+    ...mapActions('school', {
+      get: action.GET_SCHOOL
     })
   },
   data () {
     return {
-      schools: [{
-        _id: 0,
-        name: 'St. Clare’s Oxford',
-        language: 'Английский язык',
-        country: 'Англия',
-        city: 'Оксфордшир',
-        age: '12-17 лет',
-        cost: 'от 735 $ за неделю'
-      }]
+
     }
   },
   mounted () {
-    this.getSpecs()
+    this.get()
   }
 }
 </script>

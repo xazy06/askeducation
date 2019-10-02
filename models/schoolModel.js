@@ -3,10 +3,19 @@ import CRUD from '../modules/crud/';
 
 const Schema = mongoose.Schema;
 const schema = new Schema({
-  title: { type: String },
-  date: { type: String },
-  url: { type: String },
-  text: { type: String }
+  name: { type: String },
+  age: { type: String },
+  courses: { type: Array },
+  description: { type: String },
+  cost: { type: String },
+  country: { type: Object },
+  city: { type: Object },
+  currency: { type: String },
+  lang: { type: Object },
+  seoUrl: { type: String },
+  seoDescription: { type: String },
+  seoTitle: { type: String },
+  seoKeywords: { type: String }
 });
 
 let school = {
