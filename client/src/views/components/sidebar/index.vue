@@ -1,6 +1,8 @@
 <template>
     <div class="b-sidebar">
-        <img class="b-logo" alt="logo" src="@/assets/img/logo.png"/>
+        <router-link class="s-display_b" to="/">
+            <img class="b-logo" alt="logo" src="@/assets/img/logo.png"/>
+        </router-link>
         <bmenu :admin="admin" />
         <sidebar-bottom/>
     </div>

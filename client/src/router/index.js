@@ -26,10 +26,13 @@ export default new Router({
   mode: 'history',
   routes: [
     route('/', 'home'),
-    route('/news', 'news', { name: 'Новости', breadcrumb: [{name: 'Новости', link: '/news'}] }),
-    route('/about', 'about', { name: 'О нас', breadcrumb: [{name: 'О нас', link: '/about'}] }),
+    route('/news', 'news', {name: 'Новости', breadcrumb: [{name: 'Новости', link: '/news'}]}),
+    route('/about', 'about', {name: 'О нас', breadcrumb: [{name: 'О нас', link: '/about'}]}),
     route('/lang', 'lang', {name: 'Языковые курсы', breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]}),
-    route('/middle', 'middle', {name: 'Среднее образование', breadcrumb: [{name: 'Среднее образование', link: '/middle'}]}),
+    route('/middle', 'middle', {
+      name: 'Среднее образование',
+      breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
+    }),
     route('/high', 'high', {name: 'Высшее образование', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
     route('/contacts', 'contacts', {name: 'Контакты', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
     route('/articles', 'articles', {name: 'Статьи', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
@@ -41,7 +44,7 @@ export default new Router({
       ]
     }),
     route(
-      '/admin',
+      '/admin/',
       'admin',
       {
         name: 'Admin',
@@ -51,39 +54,47 @@ export default new Router({
         ]
       },
       [
-        children('types', 'types', {name: 'Тип курсов',
+        children('types', 'types', {
+          name: 'Тип курсов',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
-            {name: 'Типы курсов', link: '/types'}
+            {name: 'Типы курсов', link: 'types'}
           ]
         }),
-        children('langs', 'langs', {name: 'Языки',
+        children('langs', 'langs', {
+          name: 'Языки',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
-            {name: 'языки', link: '/langs'}
-          ]}),
-        children('specs', 'specs', {name: 'Специализации',
+            {name: 'языки', link: 'langs'}
+          ]
+        }),
+        children('specs', 'specs', {
+          name: 'Специализации',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
-            {name: 'специализации', link: '/specs'}
-          ]}),
-        children('countries', 'countries', {name: 'Страны',
+            {name: 'специализации', link: 'specs'}
+          ]
+        }),
+        children('countries', 'countries', {
+          name: 'Страны',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
-            {name: 'страны', link: '/countries'}
-          ]}),
-        children('cities', 'cities', {name: 'Города',
+            {name: 'страны', link: 'countries'}
+          ]
+        }),
+        children('cities', 'cities', {
+          name: 'Города',
           layout: 'admin',
           breadcrumb: [
             {name: 'admin', link: '/admin'},
-            {name: 'города', link: '/cities'}
-          ]})
-      ]),
+            {name: 'города', link: 'cities'}
+          ]
+        })
+      ])
     // route('/users', 'users', { requiresAuth: true })
-    route('/users', 'users')
   ]
 })
