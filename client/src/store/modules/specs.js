@@ -11,21 +11,32 @@ export default {
 
   },
   mutations: {
-    [mutation.SPECS] (state, specs) {
-      state.specs = specs
+    [mutation.SPECS] (state, items) {
+      state.specs = items
     }
   },
   actions: {
-    // HOME TICKETS TABS
     async [action.GET_SPECS] ({ commit, getters }, params) {
       let response
       params = params || {}
       response = await api.get(params)
 
-      commit(mutation.SPECS, {
-        specs: response.value
-      })
-    }
+      commit(mutation.SPECS, response)
+    },
 
+    async [action.POST_SPECS] ({ getters, state, commit }, data) {
+      await api.post(data)
+      await api.get()
+    },
+
+    async [action.DELETE_SPECS] ({ getters, state, commit }, id) {
+      await api.remove({id: id})
+      await api.get()
+    },
+
+    async [action.PUT_SPECS] ({ getters, state, commit }, data) {
+      await api.put(data)
+      await api.get()
+    }
   }
 }

@@ -25,7 +25,7 @@
           </table>
         </div>
         <div v-if="selected" class="col-md-6">
-          <h2>Язык</h2>
+          <h2>Язык {{selected.name}}</h2>
           <div class="s-mb_40">
             <div class="s-mb_20">
               <b-form-input class="s-mb_20" v-model="selected.name" placeholder="Название"></b-form-input>
@@ -33,6 +33,7 @@
           </div>
           <div>
             <button @click="put(selected)" class="btn btn-primary">Сохранить</button>
+            <button @click="unselect" class="btn btn-default">Закрыть</button>
           </div>
         </div>
       </div>
@@ -50,7 +51,7 @@ import {mapState, mapActions} from 'vuex'
 import * as action from '@/store/types/actionTypes'
 
 export default {
-  name: 'types',
+  name: 'langs',
   components: {
     pageTop,
     page
@@ -69,12 +70,23 @@ export default {
   methods: {
     ...mapActions('langs', {
       get: action.GET_LANGS,
-      post: action.POST_LANGS,
-      remove: action.DELETE_LANGS,
+      _post: action.POST_LANGS,
+      _remove: action.DELETE_LANGS,
       put: action.PUT_LANGS
     }),
+    async post (data) {
+      await this._post(data)
+      await this.get()
+    },
+    async remove (data) {
+      await this._remove(data)
+      await this.get()
+    },
     select (type) {
       this.selected = type
+    },
+    unselect () {
+      this.selected = null
     }
   },
   mounted () {

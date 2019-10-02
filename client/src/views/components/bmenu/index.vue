@@ -68,6 +68,10 @@ export default {
         //   to: 'articles'
         // },
         {
+          name: 'Специализации',
+          to: 'specs'
+        },
+        {
           name: 'Языки',
           to: 'langs'
         },

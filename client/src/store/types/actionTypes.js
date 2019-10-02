@@ -1,5 +1,8 @@
 // SPECS
 export const GET_SPECS = 'GET_SPECS'
+export const POST_SPECS = 'POST_SPECS'
+export const DELETE_SPECS = 'DELETE_SPECS'
+export const PUT_SPECS = 'PUT_SPECS'
 
 // TYPES
 export const GET_TYPES = 'GET_TYPES'
