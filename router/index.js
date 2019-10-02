@@ -11,6 +11,8 @@ import express from 'express'
 import specController from '../controllers/specController'
 import courseTypesController from "../controllers/courseTypesController";
 import langController from "../controllers/langController";
+import cityController from "../controllers/cityController";
+import countryController from "../controllers/countryController";
 
 const Router = express.Router();
 
@@ -36,5 +38,17 @@ Router.get('/api/lang/:id', langController.get);
 Router.delete('/api/lang/:id', langController.delete);
 Router.post('/api/lang', langController.post);
 Router.put('/api/lang/:id', langController.put);
+
+Router.get('/api/city', cityController.get);
+Router.get('/api/city/:id', cityController.get);
+Router.delete('/api/city/:id', cityController.delete);
+Router.post('/api/city', cityController.post);
+Router.put('/api/city/:id', cityController.put);
+
+Router.get('/api/country', countryController.get);
+Router.get('/api/country/:id', countryController.get);
+Router.delete('/api/country/:id', countryController.delete);
+Router.post('/api/country', countryController.post);
+Router.put('/api/country/:id', countryController.put);
 
 module.exports = Router;

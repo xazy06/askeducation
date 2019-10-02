@@ -68,6 +68,14 @@ export default {
         //   to: 'articles'
         // },
         {
+          name: 'Города',
+          to: 'cities'
+        },
+        {
+          name: 'Страны',
+          to: 'countries'
+        },
+        {
           name: 'Специализации',
           to: 'specs'
         },

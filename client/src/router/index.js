@@ -43,7 +43,9 @@ export default new Router({
       [
         children('types', 'types', {name: 'Тип курсов', layout: 'admin'}),
         children('langs', 'langs', {name: 'Языки', layout: 'admin'}),
-        children('specs', 'specs', {name: 'Специализации', layout: 'admin'})
+        children('specs', 'specs', {name: 'Специализации', layout: 'admin'}),
+        children('countries', 'countries', {name: 'Страны', layout: 'admin'}),
+        children('cities', 'cities', {name: 'Города', layout: 'admin'})
       ]),
     // route('/users', 'users', { requiresAuth: true })
     route('/users', 'users')

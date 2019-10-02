@@ -15,3 +15,15 @@ export const GET_LANGS = 'GET_LANGS'
 export const POST_LANGS = 'POST_LANGS'
 export const DELETE_LANGS = 'DELETE_LANGS'
 export const PUT_LANGS = 'PUT_LANGS'
+
+// CITIES
+export const GET_CITIES = 'GET_CITIES'
+export const POST_CITIES = 'POST_CITIES'
+export const DELETE_CITIES = 'DELETE_CITIES'
+export const PUT_CITIES = 'PUT_CITIES'
+
+// COUNTRIES
+export const GET_COUNTRIES = 'GET_COUNTRIES'
+export const POST_COUNTRIES = 'POST_COUNTRIES'
+export const DELETE_COUNTRIES = 'DELETE_COUNTRIES'
+export const PUT_COUNTRIES = 'PUT_COUNTRIES'
