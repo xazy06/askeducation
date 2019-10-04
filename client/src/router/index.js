@@ -43,6 +43,13 @@ export default new Router({
         {name: 'Каталог', link: ''}
       ]
     }),
+    route('/high/school/:alias', 'school', {
+      name: 'Школы',
+      breadcrumb: [
+        {name: 'Высшее образование', link: '/high'},
+        {name: 'Школа', link: ''}
+      ]
+    }),
     route(
       '/admin/',
       'admin',

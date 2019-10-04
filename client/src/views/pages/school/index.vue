@@ -6,9 +6,6 @@
     <page>
       <div class="b-p__inner">
         <h2>Каталог</h2>
-        <div class="s-mb_20 c-200">
-          <b-form-select value-field="_id" text-field="name" :options="countries"></b-form-select>
-        </div>
 
         <div v-for="school in schools" v-bind:key="school._id">
           <school-list-item :school="school"></school-list-item>
@@ -34,12 +31,9 @@ export default {
   },
   computed: {
     ...mapState('school', ['schools']),
-    ...mapState('countries', ['countries'])
+    ...mapState('specs', ['specs'])
   },
   methods: {
-    ...mapActions('countries', {
-      getCountries: action.GET_COUNTRIES
-    }),
     ...mapActions('school', {
       get: action.GET_SCHOOL
     })
@@ -51,14 +45,11 @@ export default {
   },
   mounted () {
     this.get()
-    this.getCountries()
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .c-200 {
-    width: 200px;
-  }
+
 </style>

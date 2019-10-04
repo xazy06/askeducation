@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
-var router = require('./router/index');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sassMiddleware = require('node-sass-middleware');
+const router = require('./router/index');
 import db from './db'
 const PORT = 8081;
 const app = express();
-var cors = require('cors');
+const cors = require('cors');
 
 app.use(logger('dev'));
 app.use(cors());
