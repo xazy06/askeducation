@@ -26,7 +26,7 @@ import * as action from '@/store/types/actionTypes'
 import {mapState, mapActions} from 'vuex'
 
 export default {
-  name: 'contacts',
+  name: 'schools',
   components: {
     pageTop,
     page,

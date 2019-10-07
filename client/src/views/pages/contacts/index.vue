@@ -27,6 +27,8 @@
           Наша работа, да и вся наша жизнь, подчинены тому, чтобы нашим клиентам было уютно, спокойно, комфортно.
           </p>
         </div>
+
+        <contact />
         <contact-form/>
       </div>
     </page>
@@ -37,17 +39,19 @@
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
 import contactForm from '@/views/components/contactForm'
+import contact from '@/views/components/contact'
 
 export default {
   name: 'contacts',
   components: {
     pageTop,
     page,
-    contactForm
+    contactForm,
+    contact
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }
