@@ -1,26 +1,58 @@
 <template>
-  <div class="b-top-wrapper">
+  <div v-bind:style="{backgroundImage: 'url(' + require(`@/assets/img/page-top/${data}`) + ')'}" class="b-top-wrapper">
+    <div class="b-top-inner">
     <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'pageTop'
+  name: 'pageTop',
+  data () {
+    return {
+      data: 'map-page.png'
+    }
+  },
+  methods: {
+    update () {
+      if (this.$route.meta.banner) {
+        this.data = this.$route.meta.banner
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.update()
+    }
+  },
+  mounted () {
+    this.update()
+  }
 }
+
 </script>
 
 <style scoped lang="scss">
-  .b-top-wrapper {
-    height: 468px;
-    padding: 120px 40px 0;
+  .b-top {
 
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(left,  #ffffff 0%, #bebebe 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #ffffff 0%,#bebebe 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #ffffff 0%,#bebebe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bebebe',GradientType=1 ); /* IE6-9 */
-    margin-bottom: 10px;
+    &-inner {
+      padding: 120px 40px 0;
+      height: 472px;
+      background: #f7f7f7; /* Old browsers */
+      background: -moz-linear-gradient(left,  #f7f7f7 0%, transparent 70%);
+      background: -webkit-linear-gradient(left,  #f7f7f7 0%,transparent 70%);
+      background: linear-gradient(to right,  #f7f7f7 0%, transparent 70%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='transparent',GradientType=1 );
+    }
+
+    &-wrapper {
+      height: 472px;
+      background-size: cover;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      margin-bottom: 10px;
+    }
   }
 
   .h-sub {

@@ -1,17 +1,16 @@
 <template>
   <div>
     <page-top>
-      <h1 class="red s-uppercase">Экономика за рубежом</h1>
+      <h1 class="red s-uppercase">Высшее образование<br/>за рубежом</h1>
     </page-top>
     <page>
-      <div class="b-p__inner">
-        <h2>Каталог</h2>
-        <div class="s-mb_20 c-200">
-          <b-form-select value-field="_id" text-field="name" :options="countries"></b-form-select>
-        </div>
+      <div class="">
+        <lang-filter :filters="filters"></lang-filter>
 
-        <div v-for="school in schools" v-bind:key="school._id">
-          <school-list-item :school="school"></school-list-item>
+        <div class="s-p_0-15">
+          <div v-for="school in schools" v-bind:key="school._id">
+            <school-list-item :school="school"></school-list-item>
+          </div>
         </div>
       </div>
     </page>
@@ -20,6 +19,7 @@
 
 <script>
 import pageTop from '@/views/components/pageTop'
+import langFilter from '@/views/components/langFilter'
 import page from '@/views/components/page'
 import schoolListItem from '@/views/components/schoolListItem'
 import * as action from '@/store/types/actionTypes'
@@ -30,7 +30,8 @@ export default {
   components: {
     pageTop,
     page,
-    schoolListItem
+    schoolListItem,
+    langFilter
   },
   computed: {
     ...mapState('school', ['schools']),
@@ -46,7 +47,9 @@ export default {
   },
   data () {
     return {
-
+      filters: {
+        country: true
+      }
     }
   },
   mounted () {

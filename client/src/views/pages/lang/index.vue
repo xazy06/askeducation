@@ -4,12 +4,14 @@
       <h1 class="red s-uppercase">Языковые курсы</h1>
     </page-top>
     <page>
-      <lang-filter></lang-filter>
+      <lang-filter :filters="filters"></lang-filter>
 
-      <div v-for="item in items" v-bind:key="item._id">
-        <router-link to="/">
-          <group-header sub="">{{item.name}}</group-header>
-        </router-link>
+      <div class="s-p_0-15 s-mb_100">
+        <div v-for="item in items" v-bind:key="item._id">
+          <router-link to="/">
+            <group-header sub="">{{item.name}}</group-header>
+          </router-link>
+        </div>
       </div>
 
       <contact-form/>
@@ -37,7 +39,12 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      filters: {
+        programm: true,
+        language: true,
+        country: true,
+        age: true
+      }
     }
   },
   computed: {

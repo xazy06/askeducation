@@ -4,16 +4,13 @@
       <h1 class="red s-uppercase">Среднее образование</h1>
     </page-top>
     <page>
-      <div class="b-p__inner">
-        <h2>Каталог</h2>
-        <div class="s-mb_20 c-200">
-          <b-form-select value-field="_id" text-field="name" :options="countries"></b-form-select>
-        </div>
-
+      <div class="s-mb_100">
+        <lang-filter :filters="filters"></lang-filter>
         <div v-for="school in schools" v-bind:key="school._id">
           <school-list-item :school="school"></school-list-item>
         </div>
       </div>
+      <contact-form/>
     </page>
   </div>
 </template>
@@ -22,6 +19,8 @@
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
 import schoolListItem from '@/views/components/schoolListItem'
+import langFilter from '@/views/components/langFilter'
+import contactForm from '@/views/components/contactForm'
 import * as action from '@/store/types/actionTypes'
 import {mapState, mapActions} from 'vuex'
 
@@ -30,28 +29,27 @@ export default {
   components: {
     pageTop,
     page,
-    schoolListItem
+    schoolListItem,
+    langFilter,
+    contactForm
   },
   computed: {
-    ...mapState('school', ['schools']),
-    ...mapState('countries', ['countries'])
+    ...mapState('school', ['schools'])
   },
   methods: {
-    ...mapActions('countries', {
-      getCountries: action.GET_COUNTRIES
-    }),
     ...mapActions('school', {
       get: action.GET_SCHOOL
     })
   },
   data () {
     return {
-
+      filters: {
+        country: true
+      }
     }
   },
   mounted () {
     this.get()
-    this.getCountries()
   }
 }
 </script>

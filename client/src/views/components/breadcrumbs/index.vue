@@ -5,9 +5,6 @@
           Главная
         </router-link>
       </li>
-<!--      <li class="b-breadcrumbs_item">-->
-<!--        <span class="b-breadcrumbs_item-link delimiter">|</span>-->
-<!--      </li>-->
       <li v-for="(breadcrumb, idx) in breadcrumbsList" :key="idx" class="b-breadcrumbs_item">
         <router-link class="b-breadcrumbs_item-link" :to="breadcrumb.link" active-class="active" exact>
           <span class="b-breadcrumbs_item-link delimiter">|</span>
@@ -27,12 +24,12 @@ export default {
   },
   methods: {
     updateList () {
-      this.breadcrumbsList = this.$route.meta.breadcrumb;
+      this.breadcrumbsList = this.$route.meta.breadcrumb
     }
   },
   watch: {
     '$route' (to, from) {
-      this.updateList();
+      this.updateList()
     }
   },
   mounted () {

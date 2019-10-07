@@ -28,7 +28,7 @@ export default {
     padding:  17px 16px 23px;
 
     &:hover {
-      box-shadow: 0 0 12px rgba(240, 78, 35, 0.6);
+      box-shadow: 0 0 12px rgba(240, 78, 35, 0.2);
     }
 
     &_img {
@@ -66,10 +66,12 @@ export default {
       }
 
       &__list {
-        font-weight: 300;
+        font-weight: 600;
         letter-spacing: 1.28px;
         list-style: none;
         text-transform: uppercase;
+        padding-left: 29px;
+        line-height: 25px;
       }
     }
   }

@@ -26,16 +26,17 @@ export default new Router({
   mode: 'history',
   routes: [
     route('/', 'home'),
-    route('/news', 'news', {name: 'Новости', breadcrumb: [{name: 'Новости', link: '/news'}]}),
+    route('/news', 'news', {name: 'Новости', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
     route('/about', 'about', {name: 'О нас', breadcrumb: [{name: 'О нас', link: '/about'}]}),
-    route('/lang', 'lang', {name: 'Языковые курсы', breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]}),
+    route('/lang', 'lang', {name: 'Языковые курсы', banner: 'lang.jpg', breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]}),
     route('/middle', 'middle', {
+      banner: 'middle.jpg',
       name: 'Среднее образование',
       breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
     }),
-    route('/high', 'high', {name: 'Высшее образование', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
-    route('/contacts', 'contacts', {name: 'Контакты', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
-    route('/articles', 'articles', {name: 'Статьи', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
+    route('/high', 'high', {name: 'Высшее образование', banner: 'high.jpg', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
+    route('/contacts', 'contacts', {name: 'Контакты', banner: 'map-page.png', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
+    route('/articles', 'articles', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
     route('/high/schools/:type', 'schools', {
       name: 'Школы',
       breadcrumb: [

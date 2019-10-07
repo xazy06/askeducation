@@ -20,7 +20,7 @@ export default {
     text-transform: uppercase;
     letter-spacing: 2.7px;
     margin-bottom: 60px;
-    padding: 0 15px;
+    padding: 0;
 
     &--sub {
       color: #f04e23;
