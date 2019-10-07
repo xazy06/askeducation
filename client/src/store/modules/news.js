@@ -5,7 +5,8 @@ import * as action from '@/store/types/actionTypes'
 export default {
   namespaced: true,
   state: {
-    news: []
+    news: [],
+    item: {}
   },
   getters: {
 
@@ -13,6 +14,9 @@ export default {
   mutations: {
     [mutation.NEWS] (state, items) {
       state.news = items
+    },
+    [mutation.NEWS_ITEM] (state, item) {
+      state.item = item
     }
   },
   actions: {
@@ -22,6 +26,14 @@ export default {
       response = await api.get(params)
 
       commit(mutation.NEWS, response)
+    },
+
+    async [action.GET_NEWS_ITEM_BY_ID] ({ commit, getters }, params) {
+      let response
+      params = {id: params}
+      response = await api.get(params)
+
+      commit(mutation.NEWS_ITEM, response)
     },
 
     async [action.POST_NEWS] ({ getters, state, commit }, data) {

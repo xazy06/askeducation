@@ -27,6 +27,7 @@ export default new Router({
   routes: [
     route('/', 'home'),
     route('/news', 'news', {name: 'Новости', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
+    route('/news/:id', 'news/detail', {name: 'Новость', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
     route('/about', 'about', {name: 'О нас', breadcrumb: [{name: 'О нас', link: '/about'}]}),
     route('/lang', 'lang', {name: 'Языковые курсы', banner: 'lang.jpg', breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]}),
     route('/middle', 'middle', {
@@ -38,6 +39,7 @@ export default new Router({
     route('/school/:id', 'school', {name: 'Школа', banner: 'high.jpg', breadcrumb: [{name: 'Школа', link: ''}]}),
     route('/contacts', 'contacts', {name: 'Контакты', banner: 'map-page.png', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
     route('/articles', 'articles', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
+    route('/articles/:id', 'articles/detail', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
     route('/high/schools/:type', 'schools', {
       name: 'Школы',
       breadcrumb: [

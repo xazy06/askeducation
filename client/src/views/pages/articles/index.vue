@@ -6,7 +6,7 @@
     <page>
       <div class="b-p__inner">
         <div v-for="article in articles" v-bind:key="article._id">
-          <article-item :url="article.url" :date="article.date">{{article.title}}</article-item>
+          <article-item :url="article.url" :id="article._id" :date="article.date">{{article.title}}</article-item>
         </div>
       </div>
     </page>

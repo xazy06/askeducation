@@ -30,6 +30,7 @@ export const PUT_COUNTRIES = 'PUT_COUNTRIES'
 
 // ARTICLES
 export const GET_ARTICLES = 'GET_ARTICLES'
+export const GET_ARTICLE_ITEM_BY_ID = 'GET_ARTICLE_ITEM_BY_ID'
 export const POST_ARTICLES = 'POST_ARTICLES'
 export const DELETE_ARTICLES = 'DELETE_ARTICLES'
 export const PUT_ARTICLES = 'PUT_ARTICLES'
@@ -39,6 +40,7 @@ export const GET_NEWS = 'GET_NEWS'
 export const POST_NEWS = 'POST_NEWS'
 export const DELETE_NEWS = 'DELETE_NEWS'
 export const PUT_NEWS = 'PUT_NEWS'
+export const GET_NEWS_ITEM_BY_ID = 'GET_NEWS_ITEM_BY_ID'
 
 // SCHOOL
 export const GET_SCHOOL = 'GET_SCHOOL'

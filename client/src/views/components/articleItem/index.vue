@@ -4,7 +4,8 @@
 
       <strong class="b-article-date">{{date}}</strong>
       <br/>
-      <router-link :to="url">
+<!--      <router-link :to="url">-->
+      <router-link :to="`/articles/${id}`">
         <slot/>
       </router-link>
     </div>
@@ -14,7 +15,7 @@
 <script>
 export default {
   name: 'articleItem',
-  props: ['date', 'url']
+  props: ['date', 'url', 'id']
 }
 </script>
 
