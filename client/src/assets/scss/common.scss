@@ -425,8 +425,14 @@ p.i {
   text-indent: 40px;
 }
 
-.s-ta_l {
-  text-align: left;
+.s-ta {
+  &_r {
+    text-align: right;
+  }
+
+  &_l {
+    text-align: left;
+  }
 }
 
 .s-dib {

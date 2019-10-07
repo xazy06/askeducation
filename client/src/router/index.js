@@ -35,6 +35,7 @@ export default new Router({
       breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
     }),
     route('/high', 'high', {name: 'Высшее образование', banner: 'high.jpg', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
+    route('/school/:id', 'school', {name: 'Школа', banner: 'high.jpg', breadcrumb: [{name: 'Школа', link: ''}]}),
     route('/contacts', 'contacts', {name: 'Контакты', banner: 'map-page.png', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
     route('/articles', 'articles', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
     route('/high/schools/:type', 'schools', {

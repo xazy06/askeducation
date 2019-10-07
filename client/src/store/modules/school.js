@@ -5,20 +5,32 @@ import * as action from '@/store/types/actionTypes'
 export default {
   namespaced: true,
   state: {
-    schools: []
+    schools: [],
+    school: {}
   },
   getters: {
 
   },
   mutations: {
-    [mutation.SCHOOL] (state, items) {
+    [mutation.SCHOOLS] (state, items) {
       state.schools = items
+    },
+    [mutation.SCHOOL] (state, school) {
+      state.school = school
     }
   },
   actions: {
     async [action.GET_SCHOOL] ({ commit, getters }, params) {
       let response
       params = params || {}
+      response = await api.get(params)
+
+      commit(mutation.SCHOOLS, response)
+    },
+
+    async [action.GET_SCHOOL_BY_ID] ({ commit, getters }, params) {
+      let response
+      params = {id: params}
       response = await api.get(params)
 
       commit(mutation.SCHOOL, response)

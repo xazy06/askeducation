@@ -99,6 +99,11 @@ export function http (method, type, params) {
   if (type === 'put') {
     method = `${method}/${params._id}`
   }
+
+  if (type === 'get' && ('id' in params)) {
+    method = `${method}/${params.id}`
+  }
+
   return instance[type](method, data).then(response => response.data)
 }
 

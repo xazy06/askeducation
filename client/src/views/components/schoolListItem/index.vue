@@ -1,12 +1,20 @@
 <template>
   <div class="b-school-list-item clearfix">
-    <div class="b-school-list-item_img"></div>
+    <div class="b-school-list-item_img">
+      <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg" />
+    </div>
     <div class="b-school-list-item_info">
-      <div class="b-school-list-item_info__head">{{school.name}}</div>
+      <div class="b-school-list-item_info__head">
+        <router-link :to="`/school/${school._id}`">
+          {{school.name}}
+        </router-link>
+      </div>
       <div class="b-school-list-item_info__head-sub"></div>
       <div class="b-school-list-item_info__head-sub_under"></div>
       <ul class="b-school-list-item_info__list">
-        <li>{{school.lang.name}}</li>
+        <li>
+          {{school.lang.name}}
+        </li>
         <li>{{school.country.name}} {{school.city.name}}</li>
         <li>{{school.age}}</li>
         <li>{{school.cost}} {{school.currency}}</li>
@@ -35,7 +43,11 @@ export default {
       width: 203px;
       height: 212px;
       float: left;
-      background: url('https://www.studylab.ru/upload/Institutions/image/middle/a9e89341c4564012f7a6ff7986b9e8a6.jpg') 50% 0 no-repeat transparent;
+
+      & img {
+        width: 100%;
+      }
+      //background: url('') 50% 0 no-repeat transparent;
     }
 
     &_info {
@@ -49,6 +61,10 @@ export default {
         font-weight: 300;
         text-transform: uppercase;
         letter-spacing: 2.7px;
+
+        & a {
+          color: #f04e23;
+        }
 
         &-sub {
           color: #230000;

@@ -10,7 +10,7 @@ class CRUD extends ApiController {
   }
 
   get(req, res){
-    let id = req.params.id && +req.params.id || null;
+    let id = req.params.id || null;
 
     if(id === null) {
       return this.model.find((err, instances) => {

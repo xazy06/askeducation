@@ -8,7 +8,7 @@
 
       <div class="s-p_0-15 s-mb_100">
         <div v-for="item in items" v-bind:key="item._id">
-          <router-link to="/">
+          <router-link :to="`/high/schools/${item._id}`">
             <group-header sub="">{{item.name}}</group-header>
           </router-link>
         </div>

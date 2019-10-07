@@ -15,10 +15,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
   .b-page {
     padding: 0 70px 0 14px;
     color: #230000;
     /*font-size: 20px;*/
+  }
+
+  h1 {
+    max-width: 60%;
+
+    span {
+      color: #230000 !important;
+    }
   }
 </style>
