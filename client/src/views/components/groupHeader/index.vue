@@ -22,6 +22,14 @@ export default {
     margin-bottom: 60px;
     padding: 0;
 
+    @media all and (max-width: 575px) {
+      font-size: 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 30px;
+    }
+
     &--sub {
       color: #f04e23;
       letter-spacing: 2.7px;

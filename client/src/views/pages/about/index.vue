@@ -69,10 +69,18 @@ export default {
     line-height: 28px;
     margin-bottom: 90px;
 
+    @media all and (max-width: 575px) {
+      padding-right: 0;
+    }
+
     &-courses {
       list-style: none;
       margin-left: 100px;
       font-family: "Formular-bold";
+
+      @media all and (max-width: 575px) {
+        margin-left: 0;
+      }
     }
 
     &-courses-item {

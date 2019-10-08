@@ -26,6 +26,10 @@ export default {
       color: #230000;
       font-size: 25px;
 
+      @media all and (max-width: 575px) {
+        font-size: 1em;
+      }
+
       & a {
         color: #230000;
       }

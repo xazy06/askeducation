@@ -21,9 +21,9 @@
           </div>
         </h3>
 
-        <div class="b-school-info container-fluid">
+        <div class="b-school-info container-fluid no-gutters">
           <div class="row">
-            <div class="col-md-3 s-ta_r">
+            <div class="col-md-3 col-6 s-ta_r">
               <p>
                 <strong>Языки:</strong>
               </p>
@@ -61,7 +61,7 @@
                 <strong>Ближайший большой город:</strong>
               </p>
             </div>
-            <div class="col-md-9 s-uppercase">
+            <div class="col-md-9 col-6 s-uppercase">
               <p>{{school.lang.name}} язык</p>
               <p>{{school.country.name}}</p>
               <p></p>
@@ -176,6 +176,26 @@ export default {
         font-weight: 700;
         line-height: 25px;
         letter-spacing: 0.4px;
+      }
+    }
+
+    @media all and (max-width: 575px) {
+      &-head {
+        font-size: 1.3em;
+      }
+
+      &-sub {
+        font-size: 0.8em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 20px;
+      }
+
+      &-info {
+        font-size: 0.7em;
+        margin-bottom: 20px;
+        //margin
       }
     }
   }

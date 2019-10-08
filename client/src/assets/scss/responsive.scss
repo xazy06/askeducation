@@ -1,0 +1,25 @@
+@media all and (max-width: 575px) {
+  .b-sidebar {
+    margin-left: -339px;
+  }
+
+  .b-aside {
+    margin: 0 !important;
+  }
+
+  .b-page {
+    padding: 0 14px 0 14px !important;
+  }
+}
+
+@media all and (min-width: 576px)  and (max-width: 1024px) {
+  .b-sidebar {
+    margin-left: -339px;
+  }
+
+  .b-aside {
+    margin: 0 !important;
+  }
+
+}
+

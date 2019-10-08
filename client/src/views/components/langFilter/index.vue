@@ -83,15 +83,15 @@ export default {
     return {
       ages: [
         {
-          _id: 0,
+          _id: '0',
           name: '0 - 6 лет'
         },
         {
-          _id: 1,
+          _id: '1',
           name: '6 - 12 лет'
         },
         {
-          _id: 2,
+          _id: '2',
           name: '12 - 16 лет'
         }
       ]
@@ -111,6 +111,10 @@ export default {
     &-filters {
       &-wrapper {
         margin-bottom: 102px;
+
+        @media all and (max-width: 575px) {
+          margin-bottom: 40px;
+        }
       }
     }
 
@@ -120,8 +124,22 @@ export default {
       padding: 22px 16px 25px;
       width: 100%;
 
+      @media all and (max-width: 575px) {
+        padding: 0;
+      }
+
+      .s-placeholder {
+        margin-top: -26px;
+        display: block;
+        text-transform: uppercase;
+      }
+
       &:hover {
         box-shadow: 0 0 12px rgba(240, 78, 35, 0.2);
+
+        @media all and (max-width: 575px) {
+          box-shadow: none;
+        }
 
         .b-lang-filter--angle-active {
           display: inline-block;
@@ -131,6 +149,10 @@ export default {
       &--top {
         margin-bottom: 0;
         text-transform: uppercase;
+
+        @media all and (max-width: 575px) {
+          display: none;
+        }
       }
 
       &--name {
@@ -179,6 +201,17 @@ export default {
           outline: 0;
           -webkit-box-shadow: none;
           box-shadow: none;
+        }
+
+        @media all and (max-width: 575px) {
+          padding-top: 0;
+          height: 27px;
+          position: relative;
+          z-index: 1;
+
+          &:focus {
+            color: #230000;
+          }
         }
       }
 

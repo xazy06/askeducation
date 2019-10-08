@@ -57,6 +57,11 @@ export default {
     color: #f04e23;
     font-size: 20px;
     margin-bottom: 18px;
+
+    @media all and (max-width: 575px) {
+      font-size: 0.7em;
+      margin-bottom: 8px;
+    }
   }
 
   .b-descr {
@@ -67,6 +72,10 @@ export default {
       text-transform: uppercase;
       letter-spacing: 2.7px;
       margin-bottom: 24px;
+
+      @media all and (max-width: 575px) {
+        font-size: 1.5em;
+      }
     }
   }
 </style>

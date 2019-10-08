@@ -449,4 +449,8 @@ p.i {
 
 .s-p_0-15 {
   padding: 0 15px;
+
+  @media all and (max-width: 575px) {
+    //padding: 0 ;
+  }
 }

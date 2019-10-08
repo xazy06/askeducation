@@ -1,11 +1,11 @@
 <template>
-    <div class="b-sidebar">
-        <router-link class="s-display_b" to="/">
-            <img class="b-logo" alt="logo" src="@/assets/img/logo.png"/>
-        </router-link>
-        <bmenu :admin="admin" />
-        <sidebar-bottom/>
-    </div>
+  <div class="b-sidebar">
+    <router-link class="s-display_b" to="/">
+      <img class="b-logo" alt="logo" src="@/assets/img/logo.png"/>
+    </router-link>
+    <bmenu :admin="admin"/>
+    <sidebar-bottom/>
+  </div>
 </template>
 
 <script>
@@ -25,13 +25,19 @@ export default {
 <style scoped lang="scss">
   .b-sidebar {
     width: 339px;
-    float:left;
+    float: left;
     background-color: #f7f7f7;
-    height:100%;
+    height: 100%;
     padding: 73px 30px 0 57px;
+    transition: all 0.5s ease;
+  }
+
+  .menu-opened .b-sidebar {
+      margin-left: 0;
+      width: 100%;
   }
 
   .b-logo {
-      margin-bottom: 40px;
+    margin-bottom: 40px;
   }
 </style>

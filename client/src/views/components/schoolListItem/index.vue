@@ -31,9 +31,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
   .b-school-list-item {
     width: 100%;
     padding:  17px 16px 23px;
+
+    @media all and (max-width: 575px) {
+      margin-left: -16px;
+      margin-right: -16px;
+      width: auto;
+    }
 
     &:hover {
       box-shadow: 0 0 12px rgba(240, 78, 35, 0.2);
@@ -48,7 +55,15 @@ export default {
         width: 100%;
         margin-top: 18px;
       }
-      //background: url('') 50% 0 no-repeat transparent;
+
+      @media all and (max-width: 575px) {
+        width: 100%;
+        float: none;
+
+        & img {
+          margin-top: 0;
+        }
+      }
     }
 
     &_info {
@@ -89,6 +104,22 @@ export default {
         text-transform: uppercase;
         padding-left: 29px;
         line-height: 25px;
+      }
+
+      @media all and (max-width: 575px) {
+        margin: 10px 0 0 0;
+
+        &__head {
+          margin-bottom: 10px;
+          font-size: 1em;
+        }
+
+        &__list {
+          padding-left: 0;
+          font-size: 0.85em;
+          line-height: 1.2em;
+        }
+
       }
     }
   }

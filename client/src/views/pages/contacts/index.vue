@@ -80,5 +80,9 @@ export default {
     font-weight: 300;
     line-height: 28px;
     margin-bottom: 90px;
+
+    @media all and (max-width: 575px) {
+      padding-right: 0;
+    }
   }
 </style>

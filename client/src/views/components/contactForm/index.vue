@@ -13,11 +13,23 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="s-mb_20">
-                    <input placeholder="Имя *" class="form-control s-bl" type="text"/>
+                    <input required placeholder="Имя *" class="form-control s-bl" type="text"/>
                   </div>
                   <div class="s-mb_40">
-                    <input placeholder="Почта *" class="form-control s-bl" type="email"/>
+                    <input required placeholder="Почта *" class="form-control s-bl" type="email"/>
                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="s-mb_20">
+                    <input required placeholder="Телефон *" class="form-control s-bl" type="tel"/>
+                  </div>
+                  <div class="s-mb_30">
+                    <textarea required placeholder="Ваш вопрос в двух словах *" class="form-control s-bl"></textarea>
+                  </div>
+                </div>
+              </div>
+              <b-row>
+                <div class="col-md-6">
                   <div class="">
                     <div class="custom-control custom-checkbox mb-3">
                       <input type="checkbox" class="custom-control-input s-bl" id="customControlValidation1" required="">
@@ -30,17 +42,11 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="s-mb_20">
-                    <input placeholder="Телефон *" class="form-control s-bl" type="tel"/>
-                  </div>
-                  <div class="s-mb_30">
-                    <textarea placeholder="Ваш вопрос в двух словах *" class="form-control s-bl"></textarea>
-                  </div>
                   <div class="">
                     <button class="btn btn-lg btn-primary btn-block">Закажите звонок</button>
                   </div>
                 </div>
-              </div>
+              </b-row>
             </form>
           </div>
         </div>
@@ -58,11 +64,10 @@ export default {
 
 <style scoped lang="scss">
   .b-contact-form {
-    /*float: right;*/
-    /*text-align: left;*/
-
     &--wrapper {
       margin-bottom: 74px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
     &--head {
@@ -73,6 +78,10 @@ export default {
       letter-spacing: 2.7px;
       line-height:1.2;
       margin-bottom: 46px;
+
+      @media all and (max-width: 575px) {
+        font-size: 1.1em;
+      }
 
       span {
         color: #f04e23;

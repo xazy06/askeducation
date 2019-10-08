@@ -1,7 +1,7 @@
 <template>
   <div class="b-footer">
     <div class="b-footer-in">
-      <img class="s-mb_40" src="@/assets/img/footer-logo.png"/>
+      <img class="s-mb_40 b-foot-logo" src="@/assets/img/footer-logo.png"/>
       <div class="s-mb_10">
         Консультации проводятся в нашем офисе,<br/>
         а также по телефону или по Skype:
@@ -30,6 +30,12 @@ export default {
 <style scoped lang="scss">
   $red: #F04E23;
 
+  .b-foot-logo {
+    @media all and (max-width: 575px) {
+      width: 100%;
+    }
+  }
+
   .b-footer {
     position: relative;
     background-color: #595959;
@@ -45,6 +51,12 @@ export default {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
+
+    @media all and (max-width: 575px) {
+      padding: 65px 14px;
+      font-size: 1em;
+      text-align: center;
+    }
   }
 
   .b-footer-in::before {
