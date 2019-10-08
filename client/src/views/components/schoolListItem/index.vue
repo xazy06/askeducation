@@ -46,6 +46,7 @@ export default {
 
       & img {
         width: 100%;
+        margin-top: 18px;
       }
       //background: url('') 50% 0 no-repeat transparent;
     }

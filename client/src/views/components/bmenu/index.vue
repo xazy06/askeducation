@@ -61,35 +61,35 @@ export default {
         // },
         {
           name: 'Школы',
-          to: 'school'
+          to: '/admin/school'
         },
         {
           name: 'Новости',
-          to: 'news'
+          to: '/admin/news'
         },
         {
           name: 'Статьи',
-          to: 'articles'
+          to: '/admin/articles'
         },
         {
           name: 'Города',
-          to: 'cities'
+          to: '/admin/cities'
         },
         {
           name: 'Страны',
-          to: 'countries'
+          to: '/admin/countries'
         },
         {
           name: 'Специализации',
-          to: 'specs'
+          to: '/admin/specs'
         },
         {
           name: 'Языки',
-          to: 'langs'
+          to: '/admin/langs'
         },
         {
           name: 'Типы курсов',
-          to: 'types'
+          to: '/admin/types'
         }
       ]
     }

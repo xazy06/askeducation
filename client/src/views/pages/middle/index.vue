@@ -1,7 +1,11 @@
 <template>
   <div>
     <page-top>
-      <h1 class="red s-uppercase">Среднее образование</h1>
+      <h1 class="red s-uppercase">
+        Среднее образование
+        <br/>
+        <span v-if="filters.countryModel">{{countryName(filters.countryModel)}}</span>
+      </h1>
     </page-top>
     <page>
       <div class="s-mb_100">
@@ -34,17 +38,26 @@ export default {
     contactForm
   },
   computed: {
-    ...mapState('school', ['schools'])
+    ...mapState('school', ['schools']),
+    ...mapState('countries', ['countries'])
   },
   methods: {
     ...mapActions('school', {
       get: action.GET_SCHOOL
-    })
+    }),
+    countryName (id) {
+      if (!id || !this.countries.length) {
+        return ''
+      }
+
+      return this.countries.find(item => item._id === id).name
+    }
   },
   data () {
     return {
       filters: {
-        country: true
+        country: true,
+        countryModel: ''
       }
     }
   },

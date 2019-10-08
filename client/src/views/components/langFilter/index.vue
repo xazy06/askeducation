@@ -2,48 +2,52 @@
   <div class="container-fluid b-lang-filters-wrapper">
     <div class="b-lang-filters row">
 
-      <div v-if="filters.programm" class="col-md-3">
+      <div v-if="'programmModel' in filters" class="col-md-3">
         <div class="b-lang-filter">
           <div class="b-lang-filter--top">
             <strong class="b-lang-filter--name">Программа</strong>
           </div>
 
-          <b-form-select class="b-lang-filter--select" value-field="_id" text-field="name" :options="items"></b-form-select>
+          <b-form-select class="b-lang-filter--select" v-model="filters.programmModel" value-field="_id" text-field="name" :options="items"></b-form-select>
+          <span class="s-placeholder" v-if="!filters.programmModel.length">Выберите программу</span>
           <img class="b-lang-filter--angle" src="@/assets/svg/Rectangle_4.svg" />
           <img class="b-lang-filter--angle-active" src="@/assets/svg/Rectangle_5.svg" />
         </div>
       </div>
 
-      <div v-if="filters.language" class="col-md-3">
+      <div v-if="'languageModel' in filters" class="col-md-3">
         <div class="b-lang-filter">
           <div class="b-lang-filter--top">
             <strong class="b-lang-filter--name">Язык</strong>
           </div>
 
-          <b-form-select class="b-lang-filter--select" value-field="_id" text-field="name" :options="langs"></b-form-select>
+          <b-form-select class="b-lang-filter--select" v-model="filters.languageModel" value-field="_id" text-field="name" :options="langs"></b-form-select>
+          <span class="s-placeholder" v-if="!filters.languageModel.length">Выберите язык</span>
           <img class="b-lang-filter--angle" src="@/assets/svg/Rectangle_4.svg" />
           <img class="b-lang-filter--angle-active" src="@/assets/svg/Rectangle_5.svg" />
         </div>
       </div>
 
-      <div v-if="filters.country" class="col-md-3">
+      <div v-if="'countryModel' in filters" class="col-md-3">
         <div class="b-lang-filter">
           <div class="b-lang-filter--top">
             <strong class="b-lang-filter--name">Страна</strong>
           </div>
-          <b-form-select class="b-lang-filter--select" value-field="_id" text-field="name" :options="countries"></b-form-select>
+          <b-form-select class="b-lang-filter--select" v-model="filters.countryModel" value-field="_id" text-field="name" :options="countries"></b-form-select>
+          <span class="s-placeholder" v-if="!filters.countryModel.length">Выберите страну</span>
           <img class="b-lang-filter--angle" src="@/assets/svg/Rectangle_4.svg" />
           <img class="b-lang-filter--angle-active" src="@/assets/svg/Rectangle_5.svg" />
         </div>
       </div>
 
-      <div v-if="filters.age" class="col-md-3">
+      <div v-if="'agesModel' in filters" class="col-md-3">
         <div class="b-lang-filter">
           <div class="b-lang-filter--top">
             <strong class="b-lang-filter--name">Возраст</strong>
           </div>
 
-          <b-form-select class="b-lang-filter--select" value-field="_id" text-field="name" :options="ages"></b-form-select>
+          <b-form-select class="b-lang-filter--select" v-model="filters.agesModel" value-field="_id" text-field="name" :options="ages"></b-form-select>
+          <span class="s-placeholder" v-if="!filters.agesModel.length">Выберите возраст</span>
           <img class="b-lang-filter--angle" src="@/assets/svg/Rectangle_4.svg" />
           <img class="b-lang-filter--angle-active" src="@/assets/svg/Rectangle_5.svg" />
         </div>
@@ -102,6 +106,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
   .b-lang {
     &-filters {
       &-wrapper {
@@ -165,7 +170,7 @@ export default {
         font-size: 16px;
         text-transform: uppercase;
         padding-top: 124px;
-        font-weight: 300;
+        font-weight: 700;
         background: none;
         cursor: pointer;
 

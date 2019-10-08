@@ -40,10 +40,10 @@ export default {
   data () {
     return {
       filters: {
-        programm: true,
-        language: true,
-        country: true,
-        age: true
+        programmModel: '',
+        languageModel: '',
+        countryModel: '',
+        agesModel: ''
       }
     }
   },

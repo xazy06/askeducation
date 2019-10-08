@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+let router
 
 // Function to create routes
 // Is default lazy but can be changed
@@ -22,7 +23,7 @@ function children (path, view, meta) {
 
 Vue.use(Router)
 
-export default new Router({
+router = new Router({
   mode: 'history',
   routes: [
     route('/', 'home'),
@@ -36,12 +37,14 @@ export default new Router({
       breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
     }),
     route('/high', 'high', {name: 'Высшее образование', banner: 'high.jpg', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
+    route('/login', 'login', {name: 'login', breadcrumb: [{name: 'Login', link: '/login'}]}),
     route('/school/:id', 'school', {name: 'Школа', banner: 'high.jpg', breadcrumb: [{name: 'Школа', link: ''}]}),
     route('/contacts', 'contacts', {name: 'Контакты', banner: 'map-page.png', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
     route('/articles', 'articles', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
     route('/articles/:id', 'articles/detail', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
     route('/high/schools/:type', 'schools', {
       name: 'Школы',
+      banner: 'high.jpg',
       breadcrumb: [
         {name: 'Высшее образование', link: '/high'},
         {name: 'Каталог', link: ''}
@@ -55,9 +58,10 @@ export default new Router({
       ]
     }),
     route(
-      '/admin/',
+      '/admin',
       'admin',
       {
+        requiresAuth: true,
         name: 'Admin',
         layout: 'admin',
         breadcrumb: [
@@ -130,6 +134,26 @@ export default new Router({
           ]
         })
       ])
-    // route('/users', 'users', { requiresAuth: true })
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  let u
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem('jwt') == null) {
+      next({
+        path: '/login',
+        params: { nextUrl: to.fullPath }
+      })
+    } else {
+      u = localStorage.getItem('user')
+      if (u !== null && JSON.parse(unescape(decodeURI(u))).p === 'Admin-123') {
+        next()
+      }
+    }
+  } else {
+    next()
+  }
+})
+
+export default router
