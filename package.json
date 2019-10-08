@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node_modules/.bin/nodemon app.js --exec babel-node --",
-    "build": "node build --output public"
+    "babel-node": "babel-node",
+    "build": "babel app.js --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
