@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/nodemon app.js --exec babel-node --"
+    "start": "node_modules/.bin/nodemon app.js --exec babel-node --",
+    "babel-node": "babel-node",
+    "build": "babel app.js --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

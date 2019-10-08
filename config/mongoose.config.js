@@ -4,5 +4,8 @@ module.exports = {
     dbOptions: {
         //useMongoClient: true
         useNewUrlParser: true
+    },
+    server:{
+        auto_reconnect: true
     }
 };

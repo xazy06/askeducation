@@ -13,18 +13,19 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="s-mb_20">
-                    <input required placeholder="Имя *" class="form-control s-bl" type="text"/>
+                    <input required placeholder="Имя *" v-model="name" class="form-control s-bl" type="text"/>
                   </div>
                   <div class="s-mb_40">
-                    <input required placeholder="Почта *" class="form-control s-bl" type="email"/>
+                    <input required placeholder="Почта *" v-model="mail" class="form-control s-bl" type="email"/>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="s-mb_20">
-                    <input required placeholder="Телефон *" class="form-control s-bl" type="tel"/>
+                    <input required placeholder="Телефон *" v-model="phone" class="form-control s-bl" type="tel"/>
                   </div>
                   <div class="s-mb_30">
-                    <textarea required placeholder="Ваш вопрос в двух словах *" class="form-control s-bl"></textarea>
+                    <textarea required placeholder="Ваш вопрос в двух словах *" v-model="subject"
+                              class="form-control s-bl"></textarea>
                   </div>
                 </div>
               </div>
@@ -32,7 +33,8 @@
                 <div class="col-md-6">
                   <div class="">
                     <div class="custom-control custom-checkbox mb-3">
-                      <input type="checkbox" class="custom-control-input s-bl" id="customControlValidation1" required="">
+                      <input type="checkbox" v-model="confirmation" class="custom-control-input s-bl"
+                             id="customControlValidation1" required="">
                       <label class="custom-control-label" for="customControlValidation1">
                         Я ознакомлен
                         <a href="#">с условиями обработки моих персональных данных</a>
@@ -43,7 +45,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="">
-                    <button class="btn btn-lg btn-primary btn-block">Закажите звонок</button>
+                    <button v-on:click="sendRequest" class="btn btn-lg btn-primary btn-block">Закажите звонок</button>
                   </div>
                 </div>
               </b-row>
@@ -57,8 +59,39 @@
 </template>
 
 <script>
+
+import * as service from '@/services/callback'
+
 export default {
-  name: 'contactForm'
+  name: 'contactForm',
+  data () {
+    return {
+      name: '',
+      phone: '',
+      mail: '',
+      subject: '',
+      confirmation: false
+    }
+  },
+  methods: {
+    modelIsValid (model) {
+      return model.confirmation
+    },
+    sendRequest () {
+      let model = {
+        name: this.name,
+        phone: this.phone,
+        mail: this.mail,
+        subject: this.subject
+      }
+
+      if (this.modelIsValid(model) === false) {
+        return
+      }
+
+      service.post(model)
+    }
+  }
 }
 </script>
 
@@ -76,7 +109,7 @@ export default {
       font-weight: 100;
       text-transform: uppercase;
       letter-spacing: 2.7px;
-      line-height:1.2;
+      line-height: 1.2;
       margin-bottom: 46px;
 
       @media all and (max-width: 575px) {
@@ -87,6 +120,7 @@ export default {
         color: #f04e23;
       }
     }
+
     &--body {
 
     }

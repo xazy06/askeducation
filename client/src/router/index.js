@@ -5,11 +5,12 @@ let router
 
 // Function to create routes
 // Is default lazy but can be changed
-function route (path, view, meta, children) {
+function route (path, view, meta, children, props) {
   return {
     path: path,
     meta,
     component: resolve => import(`@/views/pages/${view}/index.vue`).then(resolve),
+    props: props,
     children
   }
 }
@@ -40,11 +41,18 @@ router = new Router({
       banner: 'lang.jpg',
       breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]
     }),
-    route('/type/:type/lang/:id', 'lang', {
-      name: 'Языковые курсы',
-      banner: 'lang.jpg',
-      breadcrumb: [{name: 'Языковые курсы', link: ''}]
-    }),
+    route('/type/:type/lang/:id',
+      'lang',
+      {
+        name: 'Языковые курсы',
+        banner: 'lang.jpg',
+        breadcrumb: [{name: 'Языковые курсы', link: ''}]
+      },
+      null,
+      (r) => ({
+        languageModel: r.params.id
+      })
+    ),
     route('/middle', 'middle', {
       banner: 'middle.jpg',
       name: 'Среднее образование',

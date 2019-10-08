@@ -8,6 +8,7 @@ import db from './db'
 const PORT = 8081;
 const app = express();
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 app.use(logger('dev'));
 app.use(cors());
@@ -27,6 +28,9 @@ app.use(router);
 db.connection.once('open', () => {
   console.log(`Mongoose - successful connection ...`);
   app.listen(process.env.PORT || PORT, () => console.log(`Server start on port ${process.env.PORT||PORT} ...`));
-}).on('error', error => console.warn(error));
+}).on('error', error => {
+  console.warn(error);
+  mongoose.disconnect();
+});
 
 module.exports = app;

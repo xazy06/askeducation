@@ -32,6 +32,7 @@ import {mapState, mapActions} from 'vuex'
 
 export default {
   name: 'lang',
+  props: ['languageModel'],
   components: {
     pageTop,
     page,
@@ -43,7 +44,7 @@ export default {
     return {
       filters: {
         programmModel: '',
-        languageModel: '',
+        languageModel: this.languageModel || '',
         countryModel: '',
         agesModel: ''
       }
@@ -67,10 +68,8 @@ export default {
     })
   },
   created () {
-    console.log('created')
   },
   mounted () {
-    console.log('mounted')
     this.get()
     this.getLangs()
     this.getCountries()
