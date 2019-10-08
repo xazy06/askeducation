@@ -199,6 +199,8 @@ export default {
         font-weight: 700;
         background: none;
         cursor: pointer;
+        position: relative;
+        z-index: 1;
 
         &:focus {
           border-color: #fff;

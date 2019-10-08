@@ -95,7 +95,7 @@ export default {
 
         h1 {
           font-size: 1.7em;
-          max-width: 850%;
+          max-width: 85%;
         }
       }
     }

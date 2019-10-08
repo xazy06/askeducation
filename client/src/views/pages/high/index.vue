@@ -14,13 +14,8 @@
         <h2 class="s-mb_40">Что вы хотите изучать?</h2>
 
         <div v-for="spec in specs" v-bind:key="spec._id">
-          <router-link :to="`/high/schools/${spec._id}`">
-            <group-header sub="">{{spec.name}}</group-header>
-          </router-link>
+            <group-header :link="`/high/schools/${spec._id}`" sub="">{{spec.name}}</group-header>
         </div>
-        <!--        <div v-for="spec in specs" v-bind:key="spec._id">-->
-        <!--          <router-link :to="`/high/schools/${spec._id}`">{{spec.name}}</router-link>-->
-        <!--        </div>-->
       </div>
       <contact-form/>
     </page>

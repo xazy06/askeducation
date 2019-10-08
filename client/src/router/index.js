@@ -27,7 +27,7 @@ Vue.use(Router)
 router = new Router({
   mode: 'history',
   routes: [
-    route('/', 'home'),
+    route('/', 'home', {banner: 'home.jpg'}),
     route('/news', 'news', {name: 'Новости', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
     route('/news/:id', 'news/detail', {
       name: 'Новость',

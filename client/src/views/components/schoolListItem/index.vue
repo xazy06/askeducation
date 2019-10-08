@@ -1,7 +1,7 @@
 <template>
   <div class="b-school-list-item clearfix">
     <div class="b-school-list-item_img">
-      <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg" />
+      <img src="@/assets/img/school-list.png" />
     </div>
     <div class="b-school-list-item_info">
       <div class="b-school-list-item_info__head">
@@ -9,8 +9,10 @@
           {{school.name}}
         </router-link>
       </div>
-      <div class="b-school-list-item_info__head-sub"></div>
-      <div class="b-school-list-item_info__head-sub_under"></div>
+      <div class="b-school-list-item_info__head-sub">Anglo European Summer Premium Centres</div>
+      <div class="b-school-list-item_info__head-sub_under">
+        Летний лагерь в оксфорде для 12-17 лет
+      </div>
       <ul class="b-school-list-item_info__list">
         <li>
           {{school.lang.name}}
@@ -60,6 +62,7 @@ export default {
       @media all and (max-width: 575px) {
         width: 100%;
         float: none;
+        height: auto;
 
         & img {
           margin-top: 0;
@@ -72,7 +75,7 @@ export default {
       margin: 0 0 0 237px;
 
       &__head {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
         color: #f04e23;
         font-size: 45px;
         font-weight: 300;
@@ -94,6 +97,16 @@ export default {
             color: #f04e23;
             font-weight: 300;
             letter-spacing: 1.28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+          }
+
+          @media all and (max-width: 575px) {
+            font-size: 12px;
+
+            &_under {
+              font-size: 12px;
+            }
           }
         }
       }

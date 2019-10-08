@@ -1,16 +1,18 @@
 <template>
   <div>
     <page-top>
-      <h1 class="red s-uppercase">Языковые курсы</h1>
+      <h1 class="red s-uppercase">
+        Языковые курсы
+        <br/>
+        <span>За рубежом</span>
+      </h1>
     </page-top>
     <page>
       <lang-filter :filters="filters"></lang-filter>
 
       <div class="s-p_0-15 s-mb_100">
         <div v-for="item in items" v-bind:key="item._id">
-          <router-link :to="`/high/schools/${item._id}`">
-            <group-header sub="">{{item.name}}</group-header>
-          </router-link>
+          <group-header :link="`/high/schools/${item._id}`" sub="">{{item.name}}</group-header>
         </div>
       </div>
 

@@ -1,14 +1,16 @@
 <template>
   <div class="b-group-head">
-    <slot></slot>
-    <span v-if="sub" class="b-group-head--sub">{{sub}}</span>
+    <router-link class="b-group-head-link" :to="link">
+      <slot></slot>
+      <span v-if="sub" class="b-group-head--sub">{{sub}}</span>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: 'groupHeader',
-  props: ['sub']
+  props: ['sub', 'link']
 }
 </script>
 
@@ -21,6 +23,10 @@ export default {
     letter-spacing: 2.7px;
     margin-bottom: 60px;
     padding: 0;
+
+    &-link {
+      color: #230000;
+    }
 
     @media all and (max-width: 575px) {
       font-size: 1.1em;
