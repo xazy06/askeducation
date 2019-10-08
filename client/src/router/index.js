@@ -43,7 +43,7 @@ router = new Router({
     route('/type/:type/lang/:id', 'lang', {
       name: 'Языковые курсы',
       banner: 'lang.jpg',
-      breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]
+      breadcrumb: [{name: 'Языковые курсы', link: ''}]
     }),
     route('/middle', 'middle', {
       banner: 'middle.jpg',
@@ -53,7 +53,7 @@ router = new Router({
     route('/middle/lang/:id', 'middle', {
       banner: 'middle.jpg',
       name: 'Среднее образование',
-      breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
+      breadcrumb: [{name: 'Среднее образование', link: '/'}]
     }),
     route('/high', 'high', {
       name: 'Высшее образование',
@@ -197,7 +197,7 @@ router.beforeEach((to, from, next) => {
 })
 
 window.admin = function () {
-  router.push('admin')
+  router.push('/admin')
 }
 
 export default router
