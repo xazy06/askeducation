@@ -100,7 +100,7 @@ export function http (method, type, params) {
     method = `${method}/${params._id}`
   }
 
-  if (type === 'get' && ('id' in params)) {
+  if (type === 'get' && params && ('id' in params)) {
     method = `${method}/${params.id}`
   }
 

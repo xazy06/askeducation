@@ -15,7 +15,10 @@
           {{school.name}}
         </h2>
         <h3 class="b-school-sub">
-          {{school.courses}}
+          <div v-for="course in school.courses" v-bind:key="course">
+            {{dictProp(items, course)}}
+          </div>
+
           <div class="b-school-sub_under">
             {{school.age}}
           </div>
@@ -24,56 +27,56 @@
         <div class="b-school-info container-fluid no-gutters">
           <div class="row">
             <div class="col-md-3 col-6 s-ta_r">
-              <p>
+              <div class="s-mb_10">
                 <strong>Языки:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Страна:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Условия проживания:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Питание:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Старт программы:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Количество уроков:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Длительность уроков:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Человек в группе:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Стоимость:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Возраст:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Стоимость проживания:</strong>
-              </p>
-              <p>
+              </div>
+              <div class="s-mb_10">
                 <strong>Ближайший большой город:</strong>
-              </p>
+              </div>
             </div>
             <div class="col-md-9 col-6 s-uppercase">
-              <p>{{school.lang.name}} язык</p>
-              <p>{{school.country.name}}</p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>от {{school.cost}} {{school.currency}} за неделю</p>
-              <p>{{school.age}}</p>
-              <p></p>
-              <p></p>
+              <div class="s-mb_10">{{school.lang.name}} язык</div>
+              <div class="s-mb_10">{{school.country.name}}</div>
+              <div class="s-mb_10">{{school.accommodations}}</div>
+              <div class="s-mb_10">{{school.food}}</div>
+              <div class="s-mb_10">{{school.starting}}</div>
+              <div class="s-mb_10">{{school.lessonsCount}}</div>
+              <div class="s-mb_10">{{school.lessonLength}}</div>
+              <div class="s-mb_10">{{school.studentsPerGroup}}</div>
+              <div class="s-mb_10">от {{school.cost}} {{school.currency}} за неделю</div>
+              <div class="s-mb_10">{{school.age}}</div>
+              <div class="s-mb_10">{{school.livingCost}}</div>
+              <div class="s-mb_10">{{school.closestCity.name}}</div>
             </div>
           </div>
         </div>
@@ -96,12 +99,12 @@
 </template>
 
 <script>
+
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
 import contactForm from '@/views/components/contactForm'
 import * as action from '@/store/types/actionTypes'
 import {mapState, mapActions} from 'vuex'
-
 export default {
   name: 'school',
   components: {
@@ -110,12 +113,23 @@ export default {
     contactForm
   },
   computed: {
-    ...mapState('school', ['school'])
+    ...mapState('school', ['school']),
+    ...mapState('types', ['items'])
   },
   methods: {
+    ...mapActions('types', {
+      getTypes: action.GET_TYPES
+    }),
     ...mapActions('school', {
       get: action.GET_SCHOOL_BY_ID
-    })
+    }),
+    dictProp (dict, id) {
+      if (!id || !dict.length) {
+        return ''
+      }
+
+      return dict.find(item => item._id === id).name
+    }
   },
   data () {
     return {
@@ -124,6 +138,7 @@ export default {
   },
   mounted () {
     this.get(this.$route.params.id)
+    this.getTypes()
   }
 }
 

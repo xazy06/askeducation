@@ -78,6 +78,7 @@ export default {
         livingCost: 0,
         closestCity: '',
         accommodations: '',
+        food: '',
         seoUrl: '',
         seoDescription: '',
         seoTitle: '',

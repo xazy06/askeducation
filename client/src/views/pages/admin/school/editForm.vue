@@ -43,16 +43,16 @@
         <b-form-input class="s-mb_10" v-model="model.starting" placeholder="Старт программы"></b-form-input>
       </b-col>
       <b-col sm="4">
-        <b-form-input class="s-mb_10" v-model="model.studentsPerGroup" placeholder="Человек в группе"></b-form-input>
+        <b-form-input class="s-mb_10" type="number" v-model="model.studentsPerGroup" placeholder="Человек в группе"></b-form-input>
       </b-col>
       <b-col sm="4">
-        <b-form-input class="s-mb_10" v-model="model.lessonLength" placeholder="Длительность уроков"></b-form-input>
+        <b-form-input class="s-mb_10" type="number" v-model="model.lessonLength" placeholder="Длительность уроков"></b-form-input>
       </b-col>
     </b-row>
     <b-row>
       <b-col sm="4">
         Количество уроков
-        <b-form-input class="s-mb_10" v-model="model.lessonsCount" placeholder="Количество уроков"></b-form-input>
+        <b-form-input class="s-mb_10" type="number" v-model="model.lessonsCount" placeholder="Количество уроков"></b-form-input>
       </b-col>
       <b-col sm="4">
         Валюта
@@ -68,7 +68,14 @@
       </b-col>
     </b-row>
 
-    <b-form-textarea class="s-mb_10" rows="4" v-model="model.accommodations" placeholder="Условия проживания"></b-form-textarea>
+    <b-row>
+      <b-col sm="6">
+      <b-form-textarea class="s-mb_10" rows="4" v-model="model.food" placeholder="Питание"></b-form-textarea>
+      </b-col>
+      <b-col sm="6">
+      <b-form-textarea class="s-mb_10" rows="4" v-model="model.accommodations" placeholder="Условия проживания"></b-form-textarea>
+      </b-col>
+    </b-row>
     <b-form-textarea class="s-mb_10" rows="7" v-model="model.description" placeholder="Описание"></b-form-textarea>
     <b-form-select multiple class="s-mb_10" :select-size="5" value-field="_id" text-field="name" v-model="model.courses" :options="items"></b-form-select>
 

@@ -15,7 +15,15 @@ const schema = new Schema({
   seoUrl: { type: String },
   seoDescription: { type: String },
   seoTitle: { type: String },
-  seoKeywords: { type: String }
+  seoKeywords: { type: String },
+  starting: { type: String },
+  lessonsCount: { type: Number },
+  lessonLength: { type: String },
+  studentsPerGroup: { type: Number },
+  livingCost: { type: String },
+  closestCity: {type: Object },
+  food: {type: String },
+  accommodations: {type: String }
 });
 
 let school = {
