@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const router = require('./router/index');
-const db = require('./db');
+import db from './db'
 const PORT = 8081;
 const app = express();
 const cors = require('cors');
