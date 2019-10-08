@@ -40,7 +40,17 @@ router = new Router({
       banner: 'lang.jpg',
       breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]
     }),
+    route('/type/:type/lang/:id', 'lang', {
+      name: 'Языковые курсы',
+      banner: 'lang.jpg',
+      breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]
+    }),
     route('/middle', 'middle', {
+      banner: 'middle.jpg',
+      name: 'Среднее образование',
+      breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
+    }),
+    route('/middle/lang/:id', 'middle', {
       banner: 'middle.jpg',
       name: 'Среднее образование',
       breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
@@ -48,6 +58,11 @@ router = new Router({
     route('/high', 'high', {
       name: 'Высшее образование',
       banner: 'high.jpg',
+      breadcrumb: [{name: 'Высшее образование', link: '/high'}]
+    }),
+    route('/high/lang/:id', 'high', {
+      banner: 'middle.jpg',
+      name: 'Высшее образование',
       breadcrumb: [{name: 'Высшее образование', link: '/high'}]
     }),
     route('/login', 'login', {name: 'login', breadcrumb: [{name: 'Login', link: '/login'}]}),
