@@ -32,7 +32,7 @@
             <div class="s-mb_20">
               <b-form-input type="date" class="s-mb_20" v-model="selected.date" placeholder="Дата"></b-form-input>
               <b-form-input class="s-mb_20" v-model="selected.title" placeholder="Заголовок"></b-form-input>
-              <b-form-textarea rows="10" v-model="selected.text" placeholder="Текст"></b-form-textarea>
+              <ckeditor :editor="editor2" :id="2" v-model="selected.text" :config="editorConfig"></ckeditor>
             </div>
           </div>
           <div>
@@ -45,7 +45,7 @@
     <b-modal size="xl" id="add" title="Добавление" @ok="post(newItem)">
       <b-form-input type="date" class="s-mb_20" v-model="newItem.date" placeholder="Дата"></b-form-input>
       <b-form-input class="s-mb_20" v-model="newItem.title" placeholder="Заголовок"></b-form-input>
-      <b-form-textarea rows="20" v-model="newItem.text" placeholder="Текст"></b-form-textarea>
+      <ckeditor :editor="editor" :id="1" v-model="newItem.text" :config="editorConfig"></ckeditor>
     </b-modal>
   </div>
 </template>
@@ -53,6 +53,7 @@
 <script>
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import {mapState, mapActions} from 'vuex'
 import * as action from '@/store/types/actionTypes'
 
@@ -64,6 +65,10 @@ export default {
   },
   data () {
     return {
+      editor: ClassicEditor,
+      editor2: ClassicEditor,
+      editorConfig: {
+      },
       selected: null,
       newItem: {
         date: '',

@@ -76,7 +76,8 @@
       <b-form-textarea class="s-mb_10" rows="4" v-model="model.accommodations" placeholder="Условия проживания"></b-form-textarea>
       </b-col>
     </b-row>
-    <b-form-textarea class="s-mb_10" rows="7" v-model="model.description" placeholder="Описание"></b-form-textarea>
+<!--    <b-form-textarea class="s-mb_10" rows="7" v-model="model.description" placeholder="Описание"></b-form-textarea>-->
+    <ckeditor :editor="editor" :id="1" v-model="model.description" :config="editorConfig"></ckeditor>
     <b-form-select multiple class="s-mb_10" :select-size="5" value-field="_id" text-field="name" v-model="model.courses" :options="items"></b-form-select>
 
     <div>
@@ -93,9 +94,18 @@
 </template>
 
 <script>
+  import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 export default {
   props: ['model', 'langs', 'countries', 'cities', 'items', 'currencies'],
-  name: 'editForm'
+  name: 'editForm',
+  data(){
+    return {
+      editor: ClassicEditor,
+      editor2: ClassicEditor,
+      editorConfig: {
+      }
+    }
+  }
 }
 </script>
 

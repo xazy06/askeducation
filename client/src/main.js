@@ -5,11 +5,13 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import { createStore } from '@/store'
 import router from './router'
+import CKEditor from '@ckeditor/ckeditor5-vue'
 import './custom.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
+Vue.use(CKEditor)
 
 const store = createStore()
 
