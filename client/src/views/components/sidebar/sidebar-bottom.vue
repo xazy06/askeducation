@@ -6,7 +6,7 @@
     </div>
     <div class="s-mb_20">
       <img class="s-mr_10" src="@/assets/img/call.png"/>
-      <span class="s-phone">+7 (495) 730-20-82</span>
+      <a href="tel:+74957302082" class="s-phone">+7 (495) 730-20-82</a>
     </div>
     <button class="sidebar-btn">Закажите звонок</button>
   </div>

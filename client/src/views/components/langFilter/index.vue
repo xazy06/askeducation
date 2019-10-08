@@ -131,7 +131,7 @@ export default {
       .s-placeholder {
         margin-top: -26px;
         display: block;
-        text-transform: uppercase;
+        padding-bottom: 2px;
       }
 
       &:hover {
@@ -178,6 +178,10 @@ export default {
         position: absolute;
         right: 0;
         bottom: 0;
+
+        @media all and (max-width: 575px) {
+          bottom: 7px;
+        }
 
         &-active {
           display: none;

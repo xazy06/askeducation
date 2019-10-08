@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 let router
 
 // Function to create routes
@@ -28,20 +29,44 @@ router = new Router({
   routes: [
     route('/', 'home'),
     route('/news', 'news', {name: 'Новости', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
-    route('/news/:id', 'news/detail', {name: 'Новость', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
+    route('/news/:id', 'news/detail', {
+      name: 'Новость',
+      banner: 'article.jpg',
+      breadcrumb: [{name: 'Новости', link: '/news'}]
+    }),
     route('/about', 'about', {name: 'О нас', breadcrumb: [{name: 'О нас', link: '/about'}]}),
-    route('/lang', 'lang', {name: 'Языковые курсы', banner: 'lang.jpg', breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]}),
+    route('/lang', 'lang', {
+      name: 'Языковые курсы',
+      banner: 'lang.jpg',
+      breadcrumb: [{name: 'Языковые курсы', link: '/lang'}]
+    }),
     route('/middle', 'middle', {
       banner: 'middle.jpg',
       name: 'Среднее образование',
       breadcrumb: [{name: 'Среднее образование', link: '/middle'}]
     }),
-    route('/high', 'high', {name: 'Высшее образование', banner: 'high.jpg', breadcrumb: [{name: 'Высшее образование', link: '/high'}]}),
+    route('/high', 'high', {
+      name: 'Высшее образование',
+      banner: 'high.jpg',
+      breadcrumb: [{name: 'Высшее образование', link: '/high'}]
+    }),
     route('/login', 'login', {name: 'login', breadcrumb: [{name: 'Login', link: '/login'}]}),
     route('/school/:id', 'school', {name: 'Школа', banner: 'high.jpg', breadcrumb: [{name: 'Школа', link: ''}]}),
-    route('/contacts', 'contacts', {name: 'Контакты', banner: 'map-page.png', breadcrumb: [{name: 'Контакты', link: '/contacts'}]}),
-    route('/articles', 'articles', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
-    route('/articles/:id', 'articles/detail', {name: 'Статьи', banner: 'article.jpg', breadcrumb: [{name: 'Статьи', link: '/articles'}]}),
+    route('/contacts', 'contacts', {
+      name: 'Контакты',
+      banner: 'map-page.png',
+      breadcrumb: [{name: 'Контакты', link: '/contacts'}]
+    }),
+    route('/articles', 'articles', {
+      name: 'Статьи',
+      banner: 'article.jpg',
+      breadcrumb: [{name: 'Статьи', link: '/articles'}]
+    }),
+    route('/articles/:id', 'articles/detail', {
+      name: 'Статьи',
+      banner: 'article.jpg',
+      breadcrumb: [{name: 'Статьи', link: '/articles'}]
+    }),
     route('/high/schools/:type', 'schools', {
       name: 'Школы',
       banner: 'high.jpg',
@@ -143,7 +168,7 @@ router.beforeEach((to, from, next) => {
     if (localStorage.getItem('jwt') == null) {
       next({
         path: '/login',
-        params: { nextUrl: to.fullPath }
+        params: {nextUrl: to.fullPath}
       })
     } else {
       u = localStorage.getItem('user')
@@ -155,5 +180,9 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
+window.admin = function () {
+  router.push('admin')
+}
 
 export default router

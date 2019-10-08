@@ -54,17 +54,20 @@ export default {
       .mobile-menu-toggler {
         width: 40px;
         position: fixed;
-        right: 15px;
-        top: 0;
+        right: 24px;
+        top: 15px;
         cursor: pointer;
         display: none;
       }
-
       @media all and (max-width: 575px) {
         height: 200px;
 
-        .mobile-menu-toggler {
+        img.mobile-menu-toggler {
           display: inline-block;
+
+          path {
+            fill: #ff1d33;
+          }
         }
       }
 
@@ -92,7 +95,7 @@ export default {
 
         h1 {
           font-size: 1.7em;
-          max-width: 100%;
+          max-width: 850%;
         }
       }
     }

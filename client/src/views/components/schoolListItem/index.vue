@@ -40,6 +40,7 @@ export default {
       margin-left: -16px;
       margin-right: -16px;
       width: auto;
+      position: relative;
     }
 
     &:hover {
@@ -107,17 +108,31 @@ export default {
       }
 
       @media all and (max-width: 575px) {
-        margin: 10px 0 0 0;
+        margin: 0;
+        position: absolute;
+        z-index: 1;
+        padding: 10px 5px;
+        background: linear-gradient(144deg, rgba(255, 255, 255, 0.94) 26%, transparent 74%);
+        bottom: 35px;
+        right: 16px;
+        left: 16px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        top: 17px;
 
         &__head {
           margin-bottom: 10px;
           font-size: 1em;
+          font-weight: 700;
         }
 
         &__list {
           padding-left: 0;
-          font-size: 0.85em;
-          line-height: 1.2em;
+          font-size: 0.75em;
+          line-height: 1.1em;
+          font-family: 'Formular-bold';
+          font-weight: 100;
         }
 
       }

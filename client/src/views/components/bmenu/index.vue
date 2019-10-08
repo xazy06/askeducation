@@ -125,6 +125,10 @@ export default {
       font-weight: bold;
       padding: 8px 0;
 
+      @media all and (max-width: 575px) {
+        font-size: 12px;
+      }
+
       &.active {
         color: rgb(240, 78, 35);
       }

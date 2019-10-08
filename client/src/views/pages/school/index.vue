@@ -195,7 +195,11 @@ export default {
       &-info {
         font-size: 0.7em;
         margin-bottom: 20px;
-        //margin
+      }
+
+      &-galery {
+        margin-bottom: 30px;
+        height: 140px;
       }
     }
   }

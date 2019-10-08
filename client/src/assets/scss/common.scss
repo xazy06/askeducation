@@ -15,7 +15,7 @@ body {
 
 body {
   margin: 0;
-  font-family: "Formular-light";
+  font-family: "Formular-light" !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -432,6 +432,10 @@ p.i {
 
   &_l {
     text-align: left;
+  }
+
+  &_c {
+    text-align: center;
   }
 }
 

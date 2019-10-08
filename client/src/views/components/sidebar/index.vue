@@ -30,6 +30,11 @@ export default {
     height: 100%;
     padding: 73px 30px 0 57px;
     transition: all 0.5s ease;
+    overflow: auto;
+
+    @media all and (max-width: 575px) {
+      padding: 56px 30px 0 57px;
+    }
   }
 
   .menu-opened .b-sidebar {
@@ -39,5 +44,10 @@ export default {
 
   .b-logo {
     margin-bottom: 40px;
+
+    @media all and (max-width: 575px) {
+      height: 100px;
+      margin-bottom: 15px;
+    }
   }
 </style>

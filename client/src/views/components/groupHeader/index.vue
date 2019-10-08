@@ -23,11 +23,12 @@ export default {
     padding: 0;
 
     @media all and (max-width: 575px) {
-      font-size: 1em;
-      white-space: nowrap;
+      font-size: 1.1em;
+      // white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       margin-bottom: 30px;
+      font-weight: 700;
     }
 
     &--sub {
