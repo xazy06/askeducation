@@ -4,7 +4,8 @@ import CRUD from '../modules/crud/';
 const Schema = mongoose.Schema;
 const schema = new Schema({
   name: { type: String },
-  lang: {type: String}
+  lang: {type: String},
+  country: {type: String}
 });
 
 let courseType = {

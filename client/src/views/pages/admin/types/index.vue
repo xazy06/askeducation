@@ -12,6 +12,7 @@
             <tr>
               <th>Название</th>
               <th>Язык</th>
+              <th>Страна</th>
               <th class="c-100"></th>
             </tr>
             </thead>
@@ -19,6 +20,7 @@
             <tr v-on:click="select(item)" v-for="item in items" v-bind:key="item._id">
               <td>{{item.name}}</td>
               <td>{{ langName(item.lang) }}</td>
+              <td>{{ langName(item.country, countries) }}</td>
               <td>
                 <b-button v-on:click.stop="remove(item._id)" variant="link">удалить</b-button>
               </td>
@@ -31,6 +33,9 @@
           <div class="s-mb_40">
             <div class="s-mb_20">
               <b-form-input class="s-mb_20" v-model="selected.name" placeholder="Название"></b-form-input>
+            </div>
+            <div class="s-mb_20">
+              <b-form-select value-field="_id" text-field="name" v-model="selected.country" :options="countries"></b-form-select>
             </div>
             <div>
               <b-form-select value-field="_id" text-field="name" v-model="selected.lang" :options="langs"></b-form-select>
@@ -45,6 +50,7 @@
     </div>
     <b-modal id="add" title="Добавление" @ok="post(newItem)">
       <b-form-input class="s-mb_20" v-model="newItem.name" placeholder="Название"></b-form-input>
+      <b-form-select value-field="_id" text-field="name" v-model="newItem.country" :options="countries"></b-form-select>
       <b-form-select value-field="_id" text-field="name" v-model="newItem.lang" :options="langs"></b-form-select>
     </b-modal>
   </div>
@@ -67,21 +73,27 @@ export default {
       selected: null,
       newItem: {
         name: '',
-        lang: null
+        lang: null,
+        country: null
       }
     }
   },
   computed: {
     ...mapState('types', ['items']),
-    ...mapState('langs', ['langs'])
+    ...mapState('langs', ['langs']),
+    ...mapState('countries', ['countries'])
   },
   methods: {
-    langName (id) {
-      if (!id || !this.langs.length) {
+    langName (id, collecion) {
+      if (collecion === undefined) {
+        collecion = this.langs
+      }
+
+      if (!id || !collecion.length) {
         return ''
       }
 
-      return this.langs.find(item => item._id === id).name
+      return collecion.find(item => item._id === id).name
     },
     ...mapActions('types', {
       get: action.GET_TYPES,
@@ -100,6 +112,9 @@ export default {
     ...mapActions('langs', {
       getLangs: action.GET_LANGS
     }),
+    ...mapActions('countries', {
+      getCountries: action.GET_COUNTRIES
+    }),
     select (type) {
       this.selected = type
     },
@@ -110,6 +125,7 @@ export default {
   mounted () {
     this.get()
     this.getLangs()
+    this.getCountries()
   }
 }
 </script>
