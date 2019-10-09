@@ -16,6 +16,8 @@ import countryController from "../controllers/countryController";
 import articleController from "../controllers/articleController";
 import newsController from "../controllers/newsController";
 import schoolController from "../controllers/schoolController";
+import uploadController from "../controllers/uploadController";
+const upload = require('../modules/upload');
 
 const Router = express.Router();
 
@@ -71,5 +73,17 @@ Router.get('/api/school/:id', schoolController.get);
 Router.delete('/api/school/:id', schoolController.delete);
 Router.post('/api/school', schoolController.post);
 Router.put('/api/school/:id', schoolController.put);
+Router.post('/api/upload',  upload.array('image[]', 10), uploadController.post);
+
+// Router.post('/api/upload',  upload.single('image'), async function (req, res) {
+//   const imagePath = path.join(__dirname, '../public/images');
+//   const fileUpload = new Save(imagePath);
+//   if (!req.file) {
+//     res.status(401).json({error: 'Please provide an image'});
+//   }
+//   const filename = await fileUpload.save(req.file.buffer);
+//   return res.status(200).json({ name: filename });
+//
+// });
 
 module.exports = Router;

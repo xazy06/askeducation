@@ -5,13 +5,14 @@ let router
 
 // Function to create routes
 // Is default lazy but can be changed
-function route (path, view, meta, children, props) {
+function route (path, view, meta, children, props, ...args) {
   return {
     path: path,
     meta,
     component: resolve => import(`@/views/pages/${view}/index.vue`).then(resolve),
     props: props,
-    children
+    children,
+    ...args
   }
 }
 
@@ -28,6 +29,7 @@ Vue.use(Router)
 router = new Router({
   mode: 'history',
   routes: [
+    route('/upload', 'admin/statics'),
     route('/', 'home', {banner: 'home.jpg'}),
     route('/news', 'news', {name: 'Новости', banner: 'article.jpg', breadcrumb: [{name: 'Новости', link: '/news'}]}),
     route('/news/:id', 'news/detail', {
@@ -123,6 +125,14 @@ router = new Router({
           breadcrumb: [
             {name: 'admin', link: '/admin'},
             {name: 'Школы', link: 'school'}
+          ]
+        }),
+        children('statics', 'statics', {
+          name: 'statics',
+          layout: 'admin',
+          breadcrumb: [
+            {name: 'admin', link: '/admin'},
+            {name: 'statics', link: ''}
           ]
         }),
         children('news', 'news', {

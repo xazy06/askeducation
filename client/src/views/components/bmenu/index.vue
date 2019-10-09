@@ -90,6 +90,10 @@ export default {
         {
           name: 'Типы курсов',
           to: '/admin/types'
+        },
+        {
+          name: 'Статика',
+          to: '/admin/statics'
         }
       ]
     }

@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 45px;
   letter-spacing: 3px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1.red {
@@ -459,4 +459,8 @@ p.i {
   @media all and (max-width: 575px) {
     //padding: 0 ;
   }
+}
+
+.c-100 {
+  width: 100px;
 }

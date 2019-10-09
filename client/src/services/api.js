@@ -92,6 +92,14 @@ export function http (method, type, params) {
   params = typeof params === 'string' ? [params] : params
   let data = paramsFormat(params, method)
 
+  if (params.file) {
+    return instance[type](method, params.formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(response => response.data)
+  }
+
   if (type === 'delete') {
     method = `${method}/${params.id}`
   }
