@@ -2,7 +2,8 @@
   <div>
     <page-top>
       <h1 class="red s-uppercase">Высшее образование<br/>
-        <span>за рубежом
+        <span>
+          за рубежом
           <br/>
           <span v-if="filters.countryModel">{{countryName(filters.countryModel)}}</span>
         </span>

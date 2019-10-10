@@ -28,40 +28,40 @@
           <div class="row">
             <div class="col-md-3 col-6 s-ta_r">
               <div class="s-mb_10">
-                <strong>Языки:</strong>
+                <strong>Языки</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Страна:</strong>
+                <strong>Страна</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Условия проживания:</strong>
+                <strong>Условия проживания</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Питание:</strong>
+                <strong>Питание</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Старт программы:</strong>
+                <strong>Старт программы</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Количество уроков:</strong>
+                <strong>Количество уроков</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Длительность уроков:</strong>
+                <strong>Длительность уроков</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Человек в группе:</strong>
+                <strong>Человек в группе</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Стоимость:</strong>
+                <strong>Стоимость</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Возраст:</strong>
+                <strong>Возраст</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Стоимость проживания:</strong>
+                <strong>Стоимость проживания</strong>
               </div>
               <div class="s-mb_10">
-                <strong>Ближайший большой город:</strong>
+                <strong>Ближайший большой город</strong>
               </div>
             </div>
             <div class="col-md-9 col-6 s-uppercase">
@@ -81,11 +81,11 @@
           </div>
         </div>
 
-        <div class="b-school-galery">
-          <b-col md cols="2" v-for="src in school.galery" v-bind:key="src" class="b-school-galery-item">
+        <b-row class="b-school-galery">
+          <b-col md v-for="src in school.galery" v-bind:key="src" class="b-school-galery-item">
             <b-img-lazy :src="src" />
           </b-col>
-        </div>
+        </b-row>
 
         <h4 class="b-school-descr-head">{{school.name}}</h4>
 
@@ -185,7 +185,7 @@ export default {
         max-height: 200px;
 
         & img {
-          width: 20%;
+
         }
       }
     }

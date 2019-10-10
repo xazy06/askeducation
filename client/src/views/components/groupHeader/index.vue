@@ -25,7 +25,8 @@ export default {
     padding: 0;
 
     &-link {
-      color: #230000;
+      //color: #230000;
+      color: #bebebe;
     }
 
     @media all and (max-width: 575px) {

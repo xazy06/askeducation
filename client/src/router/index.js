@@ -73,7 +73,7 @@ router = new Router({
     route('/high/lang/:id', 'high', {
       banner: 'middle.jpg',
       name: 'Высшее образование',
-      breadcrumb: [{name: 'Высшее образование', link: '/high'}]
+      breadcrumb: [{name: 'Высшее образование', link: ''}]
     }),
     route('/login', 'login', {name: 'login', breadcrumb: [{name: 'Login', link: '/login'}]}),
     route('/school/:id', 'school', {name: 'Школа', banner: 'high.jpg', breadcrumb: [{name: 'Школа', link: ''}]}),
