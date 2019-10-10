@@ -8,7 +8,7 @@ const connection = mongoose.connection;
 let timer = null;
 
 let connectWithRetry = () => {
-  return mongoose.connect(mongoUrl, err => {
+  return mongoose.connect(configDb.dbURL, err => {
     clearTimeout(timer);
 
     if (err) {
