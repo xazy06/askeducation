@@ -82,7 +82,7 @@
         </div>
 
         <b-row class="b-school-galery">
-          <b-col md v-for="src in school.galery" v-bind:key="src" class="b-school-galery-item">
+          <b-col md v-for="(src, index) in school.galery" v-bind:key="index" class="b-school-galery-item">
             <b-img-lazy :src="src" />
           </b-col>
         </b-row>
