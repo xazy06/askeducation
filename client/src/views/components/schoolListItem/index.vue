@@ -64,6 +64,8 @@ export default {
         width: 100%;
         float: none;
         height: auto;
+        max-height: 300px;
+        margin-bottom: 40px;
 
         & img {
           margin-top: 0;

@@ -96,6 +96,7 @@ export default {
         h1 {
           font-size: 1.7em;
           max-width: 85%;
+          background-color: #ffffff33;
         }
       }
     }
