@@ -2,7 +2,7 @@ import axios from 'axios'
 import {isUndefined, isNull, omitBy} from 'lodash'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8081/api/',
+  baseURL: 'http://' + window.location.hostname + ':8081/api/',
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
