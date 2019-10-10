@@ -208,6 +208,11 @@ export default {
 
     &.active {
       opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -215,6 +220,10 @@ export default {
     height: 140px;
     width: 140px;
     overflow: hidden;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #f1f1f1;
+    padding: 5px;
   }
 
   .main-img_wrapper {
