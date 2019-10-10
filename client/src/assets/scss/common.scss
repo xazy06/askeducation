@@ -423,6 +423,10 @@ template {
   border-color: #f04e23;
 }
 
+.s-pointer {
+  cursor: pointer;
+}
+
 p.i {
   text-indent: 40px;
 }
@@ -463,4 +467,15 @@ p.i {
 
 .c-100 {
   width: 100px;
+}
+
+.s-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.s-overflow_h {
+  overflow: hidden;
 }

@@ -89,6 +89,7 @@ export function qsValues (params) {
 }
 
 export function http (method, type, params) {
+  params = params || {};
   params = typeof params === 'string' ? [params] : params
   let data = paramsFormat(params, method)
 

@@ -1,7 +1,10 @@
 import ApiController from "./apiController";
+import staticRoot from '../modules/staticRoot';
 
 const path = require('path');
+const fs = require('fs');
 const save = require('../modules/save');
+
 
 class UploadController extends ApiController {
   constructor(){
@@ -9,7 +12,7 @@ class UploadController extends ApiController {
   }
 
   async post(req, res) {
-    const imagePath = path.join(__dirname, '../public/images');
+    const imagePath = path.join(__dirname, staticRoot);
     const fileUpload = new save(imagePath);
     let filename;
 
@@ -21,6 +24,23 @@ class UploadController extends ApiController {
 
     return super.response(res, '', 200, { files: filename });
 
+  }
+
+  async get(req, res) {
+    const imagePath = path.join(__dirname, staticRoot);
+
+    return fs.readdir(imagePath,  (err, list) => {
+      if(list === undefined) {
+        console.error(err)
+        return super.response(res, err, 500);
+      }
+
+      list = list.map(file => {
+        return `/static/images/${file}`;
+      });
+
+      return super.response(res, '', 200, { files: list });
+    })
   }
 }
 

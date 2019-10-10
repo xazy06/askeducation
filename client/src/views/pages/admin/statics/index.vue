@@ -1,9 +1,18 @@
 <template>
   <div>
-    <p>Image Upload</p>
-    <form method="post" enctype="multipart/form-data">
-      <input v-on:change="getFiles" type="file" multiple="multiple" name="image" /><br /><br />
-      <button v-on:click.prevent="submit" type="button" name="upload">Upload</button>
+    <form ref="form" method="post" enctype="multipart/form-data">
+      <div class="s-mb_40">
+        <b-form-file v-on:change="getFiles" multiple="multiple" name="image" />
+      </div>
+
+      <div class="s-mb_40">
+        <div v-for="(file, key) in files" v-bind:key="key">
+          {{ file.name }}
+          <span class="remove-file" v-on:click="removeFile( key )">удалить</span>
+        </div>
+      </div>
+
+      <b-button class="btn btn-primary" v-on:click.prevent="submit" name="upload">Загрузить</b-button>
     </form>
   </div>
 </template>
@@ -29,20 +38,33 @@ export default {
   },
   methods: {
     getFiles (event) {
-      this.files = event.target.files
+      let files = event.target.files
+
+      for (let i = 0; i < files.length; i++) {
+        this.files.push(files[i])
+      }
     },
-    submit (event) {
+    removeFile (key) {
+      this.files.splice(key, 1)
+    },
+    async submit (event) {
       let files = this.files
 
       let formData = new FormData()
 
       for (var i = 0; i < files.length; i++) {
         let file = files[i]
-        //formData.append(`image[${i}]`, file)
         formData.append('image[]', file)
       }
 
-      service.post({'file': true, formData: formData})
+      await service.post({'file': true, formData: formData})
+
+      return this.clearForm()
+    },
+    clearForm () {
+      this.files = ''
+      this.files = []
+      return this.$refs.form.reset()
     }
   },
   mounted () {

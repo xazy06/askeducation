@@ -1,7 +1,7 @@
 <template>
   <div class="b-school-list-item clearfix">
     <div class="b-school-list-item_img">
-      <img src="@/assets/img/school-list.png" />
+      <img :src="school.img" />
     </div>
     <div class="b-school-list-item_info">
       <div class="b-school-list-item_info__head">
@@ -53,6 +53,7 @@ export default {
       width: 203px;
       height: 212px;
       float: left;
+      overflow: hidden;
 
       & img {
         width: 100%;

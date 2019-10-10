@@ -25,21 +25,28 @@
           </table>
         </div>
         <div v-if="selected" class="col-md-7">
-          <h2>Школа {{selected.name}}</h2>
+          <b-row>
+            <b-col md class="s-overflow_h" cols="7">
+              <h2 class="s-ellipsis">Школа {{selected.name}}</h2>
+            </b-col>
+            <b-col class="s-ta_r" md cols="5">
+              <button @click="put(selected)" class="btn btn-primary">Сохранить</button>
+              <button @click="unselect" class="btn btn-default">Закрыть</button>
+            </b-col>
+          </b-row>
+
           <div class="s-mb_40">
             <div class="s-mb_20">
-              <edit-form :model="selected" :langs="langs" :countries="countries" :cities="cities" :items="items" :currencies="currencies"></edit-form>
+              <edit-form :model="selected" :langs="langs" :countries="countries" :cities="cities" :items="items"
+                         :currencies="currencies"></edit-form>
             </div>
-          </div>
-          <div>
-            <button @click="put(selected)" class="btn btn-primary">Сохранить</button>
-            <button @click="unselect" class="btn btn-default">Закрыть</button>
           </div>
         </div>
       </div>
     </div>
     <b-modal size="xl" id="add" title="Добавление" @ok="post(newItem)">
-      <edit-form :model="newItem" :langs="langs" :countries="countries" :cities="cities" :items="items" :currencies="currencies"></edit-form>
+      <edit-form :model="newItem" :langs="langs" :countries="countries" :cities="cities" :items="items"
+                 :currencies="currencies"></edit-form>
     </b-modal>
   </div>
 </template>
@@ -62,6 +69,8 @@ export default {
     return {
       selected: null,
       newItem: {
+        img: '',
+        galery: [],
         name: '',
         age: '',
         courses: [],

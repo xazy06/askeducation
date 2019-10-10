@@ -3,6 +3,8 @@ import CRUD from '../modules/crud/';
 
 const Schema = mongoose.Schema;
 const schema = new Schema({
+  img: { type: String },
+  galery: { type: Array },
   name: { type: String },
   age: { type: String },
   courses: { type: Array },
@@ -25,6 +27,10 @@ const schema = new Schema({
   food: {type: String },
   accommodations: {type: String }
 });
+
+// ,{
+//   autoIndex: process.env('mode') === 'development'
+// }
 
 let school = {
   model: mongoose.model('School', schema),

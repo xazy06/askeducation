@@ -82,10 +82,9 @@
         </div>
 
         <div class="b-school-galery">
-          <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg"/>
-          <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg"/>
-          <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg"/>
-          <img src="@/assets/img/a9e89341c4564012f7a6ff7986b9e8a6.jpg"/>
+          <b-col md cols="2" v-for="src in school.galery" v-bind:key="src" class="b-school-galery-item">
+            <b-img-lazy :src="src" />
+          </b-col>
         </div>
 
         <h4 class="b-school-descr-head">{{school.name}}</h4>
@@ -180,6 +179,15 @@ export default {
       margin-bottom: 50px;
       overflow: hidden;
       white-space: nowrap;
+
+      &-item {
+        overflow: hidden;
+        max-height: 200px;
+
+        & img {
+          width: 20%;
+        }
+      }
     }
 
     &-descr {
