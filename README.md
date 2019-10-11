@@ -1,4 +1,24 @@
 # askeducation
+/usr/lib/virt-sysprep/firstboot.sh start
+Scripts dir: /usr/lib/virt-sysprep/scripts
+=== Running /usr/lib/virt-sysprep/scripts/0001--tmp-customize-network-mooL5c ===
+=== Running /usr/lib/virt-sysprep/scripts/0002-rm--f--etc-ssh-ssh_host_---dpkg-reconfigure-openssh-server ===
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Creating SSH2 RSA key; this may take some time ...
+2048 SHA256:JBA7dVDJvte4rT9sGcs6OfwhOoBFAt12Oh7eRfLYUNg root@80-78-240-22.cloudvps.regruhosting.ru (RSA)
+Creating SSH2 DSA key; this may take some time ...
+1024 SHA256:juK0AMvvMnJ0gHOZ7BDvHrVVh2GoN4jKFvvt2HG0TP4 root@80-78-240-22.cloudvps.regruhosting.ru (DSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:gO+SFlxpLMSJiD3mXsOyihmafXxieQBeyxxXhle0kTg root@80-78-240-22.cloudvps.regruhosting.ru (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:GFd6uR32gX0fXy626srEb0cZq5RMr72SQAGv5l7kRHc root@80-78-240-22.cloudvps.regruhosting.ru (ED25519)
+
+
 educational portal
 Также архив с просмотровыми файлами дизайна в аттаче(не обращай внимание на лого, это промежутоная мысль).
 Архив с сайтом вот, очень надеюсь что у меня актуальная версия:
