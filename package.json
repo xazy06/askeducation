@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/nodemon app.js --exec babel-node --",
+    "dev": "node_modules/.bin/nodemon app.js --exec babel-node --",
     "babel-node": "babel-node",
-    "build": "babel app.js --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
+    "clean": "rimraf dist",
+    "cleanp": "rimraf -p",
+    "prestart": "npm run -s build",
+    "start": "node dist/app.js",
+    "build": "npm run cleanp && npm run clean && mkdir -p dist && babel --ignore client,node_modules  ./ -s -D -d dist"
   },
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
@@ -21,9 +24,10 @@
     "sharp": "^0.23.1"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "cors": "^2.8.5",
     "nodemon": "^1.19.1"
   }
 }
