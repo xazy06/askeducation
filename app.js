@@ -3,12 +3,28 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
+const history = require('connect-history-api-fallback');
 const router = require('./router/index');
 import db from './db'
-const PORT = 8081;
+let PORT = 8081;
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const staticFileMiddleware = express.static(path.join(__dirname + '/public'));
+
+if(process.env.NODE_ENV === 'production') {
+  PORT = 80;
+}
+
+app.use(staticFileMiddleware);
+app.use(history({
+  disableDotRule: true,
+  verbose: true
+}));
+
+try {
+  app.use(staticFileMiddleware);
+}catch(e){}
 
 app.use(logger('dev'));
 app.use(cors());
