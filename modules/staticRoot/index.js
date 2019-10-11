@@ -6,4 +6,3 @@ if(process.env.NODE_ENV === 'development') {
   currentRoot = devRoot;
 }
 export default currentRoot
-
