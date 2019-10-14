@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node_modules/.bin/nodemon app.js --exec babel-node --",
+    "start-mongo-dev": "net start MongoDB",
     "babel-node": "babel-node",
     "clean": "rimraf dist",
     "cleanp": "rimraf -p",
