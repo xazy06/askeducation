@@ -1,5 +1,8 @@
 # askeducation
+Вы установили NodeJS на сервер «Purple Dubnium», IP-адрес 80.78.240.22
+
 Новый доступ к серверу:
+
 Логин: root
 Пароль: Feesuuk4eetu
 
