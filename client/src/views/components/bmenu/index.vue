@@ -84,6 +84,10 @@ export default {
           to: '/admin/specs'
         },
         {
+          name: 'Программы',
+          to: '/programms'
+        },
+        {
           name: 'Языки',
           to: '/admin/langs'
         },

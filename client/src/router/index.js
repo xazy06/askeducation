@@ -87,6 +87,11 @@ router = new Router({
       banner: 'article.jpg',
       breadcrumb: [{name: 'Статьи', link: '/articles'}]
     }),
+    route('/programms', 'programm', {
+      name: 'Программы',
+      banner: 'article.jpg',
+      breadcrumb: [{name: 'Программы', link: '/programms'}]
+    }),
     route('/articles/:id', 'articles/detail', {
       name: 'Статьи',
       banner: 'article.jpg',

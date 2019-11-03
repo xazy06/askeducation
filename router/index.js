@@ -17,6 +17,7 @@ import articleController from "../controllers/articleController";
 import newsController from "../controllers/newsController";
 import schoolController from "../controllers/schoolController";
 import uploadController from "../controllers/uploadController";
+import programmController from "../controllers/programmController";
 const upload = require('../modules/upload');
 
 const Router = express.Router();
@@ -73,6 +74,12 @@ Router.get('/api/school/:id', schoolController.get);
 Router.delete('/api/school/:id', schoolController.delete);
 Router.post('/api/school', schoolController.post);
 Router.put('/api/school/:id', schoolController.put);
+
+Router.get('/api/programm', programmController.get);
+Router.get('/api/programm/:id', programmController.get);
+Router.delete('/api/programm/:id', programmController.delete);
+Router.post('/api/programm', programmController.post);
+Router.put('/api/programm/:id', programmController.put);
 
 Router.post('/api/upload',  upload.array('image[]', 10), uploadController.post);
 Router.get('/api/upload',  uploadController.get);
