@@ -5,7 +5,10 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
   title: { type: String },
   date: { type: String },
-  text: { type: String }
+  text: { type: String },
+  seoDescription: { type: String },
+  seoTitle: { type: String },
+  seoKeywords: { type: String }
 });
 
 let news = {

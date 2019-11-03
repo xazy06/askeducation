@@ -32,6 +32,9 @@
             <div class="s-mb_20">
               <b-form-input type="date" class="s-mb_20" v-model="selected.date" placeholder="Дата"></b-form-input>
               <b-form-input class="s-mb_20" v-model="selected.title" placeholder="Заголовок"></b-form-input>
+              <b-form-input class="s-mb_10" v-model="selected.seoTitle" placeholder="seoTitle"></b-form-input>
+              <b-form-input class="s-mb_10" v-model="selected.seoKeywords" placeholder="seoKeywords"></b-form-input>
+              <b-form-textarea rows="5" class="s-mb_20" v-model="selected.seoDescription" placeholder="seoDescription"></b-form-textarea>
               <ckeditor :editor="editor2" :id="2" v-model="selected.text" :config="editorConfig"></ckeditor>
             </div>
           </div>
@@ -45,6 +48,9 @@
     <b-modal size="xl" id="add" title="Добавление" @ok="post(newItem)">
       <b-form-input type="date" class="s-mb_20" v-model="newItem.date" placeholder="Дата"></b-form-input>
       <b-form-input class="s-mb_20" v-model="newItem.title" placeholder="Заголовок"></b-form-input>
+      <b-form-input class="s-mb_10" v-model="newItem.seoTitle" placeholder="seoTitle"></b-form-input>
+      <b-form-input class="s-mb_10" v-model="newItem.seoKeywords" placeholder="seoKeywords"></b-form-input>
+      <b-form-textarea rows="5" class="s-mb_20" v-model="newItem.seoDescription" placeholder="seoDescription"></b-form-textarea>
       <ckeditor :editor="editor" :id="1" v-model="newItem.text" :config="editorConfig"></ckeditor>
     </b-modal>
   </div>
@@ -73,7 +79,10 @@ export default {
       newItem: {
         date: '',
         text: '',
-        title: ''
+        title: '',
+        seoTitle: '',
+        seoKeywords: '',
+        seoDescription: ''
       }
     }
   },

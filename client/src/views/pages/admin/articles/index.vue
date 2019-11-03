@@ -34,6 +34,9 @@
               <b-form-input class="s-mb_20" v-model="selected.title" placeholder="Заголовок"></b-form-input>
               <b-form-input class="s-mb_20" v-model="selected.url" placeholder="URL"></b-form-input>
               <b-form-checkbox class="s-mb_20" v-model="selected.isArchive">Архивная</b-form-checkbox>
+              <b-form-input class="s-mb_10" v-model="selected.seoTitle" placeholder="seoTitle"></b-form-input>
+              <b-form-input class="s-mb_10" v-model="selected.seoKeywords" placeholder="seoKeywords"></b-form-input>
+              <b-form-textarea rows="5" class="s-mb_20" v-model="selected.seoDescription" placeholder="seoDescription"></b-form-textarea>
               <ckeditor :editor="editor2" :id="2" v-model="selected.text" :config="editorConfig"></ckeditor>
             </div>
           </div>
@@ -49,6 +52,9 @@
       <b-form-input class="s-mb_20" v-model="newItem.title" placeholder="Заголовок"></b-form-input>
       <b-form-input class="s-mb_20" v-model="newItem.url" placeholder="URL"></b-form-input>
       <b-form-checkbox class="s-mb_20" v-model="newItem.isArchive">Архивная</b-form-checkbox>
+      <b-form-input class="s-mb_10" v-model="newItem.seoTitle" placeholder="seoTitle"></b-form-input>
+      <b-form-input class="s-mb_10" v-model="newItem.seoKeywords" placeholder="seoKeywords"></b-form-input>
+      <b-form-textarea rows="5" class="s-mb_20" v-model="newItem.seoDescription" placeholder="seoDescription"></b-form-textarea>
       <ckeditor :editor="editor" :id="1" v-model="newItem.text" :config="editorConfig"></ckeditor>
     </b-modal>
   </div>
@@ -79,7 +85,10 @@ export default {
         text: '',
         url: '',
         title: '',
-        isArchive: false
+        isArchive: false,
+        seoTitle: '',
+        seoKeywords: '',
+        seoDescription: ''
       }
     }
   },

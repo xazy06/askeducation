@@ -7,7 +7,10 @@ const schema = new Schema({
   date: { type: String },
   url: { type: String },
   isArchive: { type: Boolean },
-  text: { type: String }
+  text: { type: String },
+  seoDescription: { type: String },
+  seoTitle: { type: String },
+  seoKeywords: { type: String }
 });
 
 let article = {
