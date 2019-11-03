@@ -33,6 +33,7 @@
               <b-form-input type="date" class="s-mb_20" v-model="selected.date" placeholder="Дата"></b-form-input>
               <b-form-input class="s-mb_20" v-model="selected.title" placeholder="Заголовок"></b-form-input>
               <b-form-input class="s-mb_20" v-model="selected.url" placeholder="URL"></b-form-input>
+              <b-form-checkbox class="s-mb_20" v-model="selected.isArchive">Архивная</b-form-checkbox>
               <ckeditor :editor="editor2" :id="2" v-model="selected.text" :config="editorConfig"></ckeditor>
             </div>
           </div>
@@ -47,6 +48,7 @@
       <b-form-input type="date" class="s-mb_20" v-model="newItem.date" placeholder="Дата"></b-form-input>
       <b-form-input class="s-mb_20" v-model="newItem.title" placeholder="Заголовок"></b-form-input>
       <b-form-input class="s-mb_20" v-model="newItem.url" placeholder="URL"></b-form-input>
+      <b-form-checkbox class="s-mb_20" v-model="newItem.isArchive">Архивная</b-form-checkbox>
       <ckeditor :editor="editor" :id="1" v-model="newItem.text" :config="editorConfig"></ckeditor>
     </b-modal>
   </div>
@@ -76,7 +78,8 @@ export default {
         date: '',
         text: '',
         url: '',
-        title: ''
+        title: '',
+        isArchive: false
       }
     }
   },
