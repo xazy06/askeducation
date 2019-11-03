@@ -33,8 +33,9 @@ export default {
     min-height: 100%;
     overflow: auto;
   }
+
   .content {
-    margin-bottom: 640px;
+    margin-bottom: 515px;
   }
 
   .main-wrapper {

@@ -1,18 +1,18 @@
 <template>
   <div class="b-footer">
     <div class="b-footer-in">
-      <img class="s-mb_40 b-foot-logo" src="@/assets/img/footer-logo.png"/>
+      <img class="s-mb_30 b-foot-logo" src="@/assets/img/footer-logo.png"/>
       <div class="s-mb_10">
         Консультации проводятся в нашем офисе,<br/>
         а также по телефону или по Skype:
       </div>
-      <div class="s-mb_30">
+      <div class="s-mb_20">
         <a class="s-accent" href="">+7 (495) 730-20-82</a>
       </div>
       <div class="s-mb_10">
         Мы работаем с понедельника по пятницу
       </div>
-      <div class="s-accent s-mb_30">с 9:00 до 19:00</div>
+      <div class="s-accent s-mb_20">с 9:00 до 19:00</div>
       <div>
         <img class="s-middle" src="@/assets/img/map.png"/>
         <span class="s-middle">Москва, Костомаровский переулок, дом 3, строение 1a, офис 313</span>
@@ -42,14 +42,14 @@ export default {
   }
 
   .b-footer-in {
-    padding: 65px 36px;
+    padding: 65px 36px 30px;
     background-color: #595959;
     width: 100%;
-    height: 570px;
+    height: 445px;
     position: absolute;
-    top: -570px;
+    top: -445px;
     color: #fff;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 300;
 
     @media all and (max-width: 575px) {
@@ -79,6 +79,10 @@ export default {
   }
 
   .s-mb_30 {
+    margin-bottom: 30px;
+  }
+
+  .s-mb_20 {
     margin-bottom: 30px;
   }
 

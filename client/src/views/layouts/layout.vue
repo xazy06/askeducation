@@ -34,7 +34,7 @@ export default {
     overflow: auto;
   }
   .content {
-    margin-bottom: 640px;
+    margin-bottom: 515px;
   }
 
   .main-wrapper {
