@@ -1,4 +1,8 @@
 # askeducation
+Новый доступ к серверу:
+Логин: root
+Пароль: Feesuuk4eetu
+
 /usr/lib/virt-sysprep/firstboot.sh start
 Scripts dir: /usr/lib/virt-sysprep/scripts
 === Running /usr/lib/virt-sysprep/scripts/0001--tmp-customize-network-mooL5c ===

@@ -10,7 +10,7 @@ let PORT = 8081;
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-const staticFileMiddleware = express.static(path.join(__dirname + '/public'));
+const staticFileMiddleware = express.static(path.join(__dirname + '../public'));
 
 if(process.env.NODE_ENV === 'production') {
   PORT = 80;

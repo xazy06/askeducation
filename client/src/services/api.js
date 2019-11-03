@@ -1,8 +1,14 @@
 import axios from 'axios'
-import {isUndefined, isNull, omitBy} from 'lodash'
+import {isUndefined, omitBy} from 'lodash'
+
+let baseURL = `http://${window.location.hostname}:8081/api/`
+
+if (process.env.NODE_ENV === 'production') {
+  baseURL = `http://${window.location.hostname}api/`
+}
 
 const instance = axios.create({
-  baseURL: 'http://' + window.location.hostname + ':8081/api/',
+  baseURL: baseURL,
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
@@ -89,7 +95,7 @@ export function qsValues (params) {
 }
 
 export function http (method, type, params) {
-  params = params || {};
+  params = params || {}
   params = typeof params === 'string' ? [params] : params
   let data = paramsFormat(params, method)
 

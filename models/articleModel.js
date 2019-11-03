@@ -6,6 +6,7 @@ const schema = new Schema({
   title: { type: String },
   date: { type: String },
   url: { type: String },
+  isArchive: { type: Boolean },
   text: { type: String }
 });
 
