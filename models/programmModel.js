@@ -8,6 +8,7 @@ const schema = new Schema({
   name: { type: String },
   age: { type: String },
   schools: { type: Array },
+  courseTypes: { type: Array },
   description: { type: String },
   cost: { type: String },
   country: { type: Object },

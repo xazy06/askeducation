@@ -92,6 +92,10 @@
         Школы
         <b-form-select multiple class="s-mb_10" :select-size="5" value-field="_id" text-field="name"
                        v-model="model.schools"
+                       :options="schools"></b-form-select>
+        Типы курсов
+        <b-form-select multiple class="s-mb_10" :select-size="5" value-field="_id" text-field="name"
+                       v-model="model.courseTypes"
                        :options="items"></b-form-select>
       </b-tab>
 
@@ -149,7 +153,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import * as service from '@/services/upload'
 
 export default {
-  props: ['model', 'langs', 'countries', 'cities', 'items', 'currencies'],
+  props: ['model', 'langs', 'countries', 'cities', 'items', 'schools', 'currencies'],
   name: 'editForm',
   data () {
     return {

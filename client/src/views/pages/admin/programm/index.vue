@@ -37,7 +37,7 @@
 
           <div class="s-mb_40">
             <div class="s-mb_20">
-              <edit-form :model="selected" :langs="langs" :countries="countries" :cities="cities" :items="schools"
+              <edit-form :model="selected" :langs="langs" :countries="countries" :schools="schools" :cities="cities" :items="items"
                          :currencies="currencies"></edit-form>
             </div>
           </div>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <b-modal size="xl" id="add" title="Добавление" @ok="post(newItem)">
-      <edit-form :model="newItem" :langs="langs" :countries="countries" :cities="cities" :items="schools"
+      <edit-form :model="newItem" :langs="langs" :countries="countries" :schools="schools" :cities="cities" :items="items"
                  :currencies="currencies"></edit-form>
     </b-modal>
   </div>
@@ -74,6 +74,7 @@ export default {
         name: '',
         age: '',
         schools: [],
+        courseTypes: [],
         country: '',
         city: '',
         description: '',
@@ -97,6 +98,7 @@ export default {
     }
   },
   computed: {
+    ...mapState('types', ['items']),
     ...mapState('school', ['schools']),
     ...mapState('programm', ['programms']),
     ...mapState('cities', ['cities']),
@@ -123,6 +125,9 @@ export default {
     ...mapActions('types', {
       getTypes: action.GET_TYPES
     }),
+    ...mapActions('school', {
+      getSchools: action.GET_SCHOOL
+    }),
     ...mapActions('programm', {
       get: action.GET_PROGRAMM,
       _post: action.POST_PROGRAMM,
@@ -148,6 +153,7 @@ export default {
     this.get()
     this.getLangs()
     this.getTypes()
+    this.getSchools()
     this.getCities()
     this.getCountries()
   }
