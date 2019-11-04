@@ -85,7 +85,7 @@ export default {
         },
         {
           name: 'Программы',
-          to: '/programms'
+          to: '/admin/programm'
         },
         {
           name: 'Языки',

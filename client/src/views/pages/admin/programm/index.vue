@@ -59,7 +59,7 @@ import {mapState, mapActions} from 'vuex'
 import * as action from '@/store/types/actionTypes'
 
 export default {
-  name: 'articles',
+  name: 'programm',
   components: {
     pageTop,
     page,

@@ -140,6 +140,14 @@ router = new Router({
             {name: 'statics', link: ''}
           ]
         }),
+        children('programm', 'programm', {
+          name: 'programm',
+          layout: 'admin',
+          breadcrumb: [
+            {name: 'admin', link: '/admin'},
+            {name: 'programm', link: ''}
+          ]
+        }),
         children('news', 'news', {
           name: 'Новости',
           layout: 'admin',
