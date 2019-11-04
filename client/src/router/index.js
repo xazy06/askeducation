@@ -97,7 +97,7 @@ router = new Router({
       banner: 'article.jpg',
       breadcrumb: [{name: 'Статьи', link: '/articles'}]
     }),
-    route('/high/schools/:type', 'schools', {
+    route('/programms/course/:type', 'programms', {
       name: 'Школы',
       banner: 'high.jpg',
       breadcrumb: [

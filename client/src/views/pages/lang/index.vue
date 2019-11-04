@@ -12,7 +12,7 @@
 
       <div class="s-p_0-15 s-mb_100">
         <div v-for="item in items" v-bind:key="item._id">
-          <group-header :link="`/high/schools/${item._id}`" sub="">{{item.name}}</group-header>
+          <group-header :link="`/programms/course/${item._id}`" sub="">{{item.name}}</group-header>
         </div>
       </div>
 
