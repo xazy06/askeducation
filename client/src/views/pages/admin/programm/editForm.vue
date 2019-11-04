@@ -89,7 +89,7 @@
                              placeholder="Условия проживания"></b-form-textarea>
           </b-col>
         </b-row>
-        Типы курсов
+        Школы
         <b-form-select multiple class="s-mb_10" :select-size="5" value-field="_id" text-field="name"
                        v-model="model.schools"
                        :options="items"></b-form-select>

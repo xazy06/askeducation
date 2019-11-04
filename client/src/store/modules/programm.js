@@ -1,4 +1,4 @@
-import * as api from '@/services/school'
+import * as api from '@/services/programm'
 import * as mutation from '@/store/types/mutationTypes'
 import * as action from '@/store/types/actionTypes'
 

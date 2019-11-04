@@ -15,7 +15,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-on:click="select(item)" v-for="item in schools" v-bind:key="item._id">
+            <tr v-on:click="select(item)" v-for="item in programms" v-bind:key="item._id">
               <td>{{item.name}}</td>
               <td>
                 <b-button v-on:click.stop="remove(item._id)" variant="link">удалить</b-button>
@@ -97,7 +97,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('types', ['items']),
+    ...mapState('school', ['schools']),
     ...mapState('programm', ['programms']),
     ...mapState('cities', ['cities']),
     ...mapState('countries', ['countries']),
