@@ -5,7 +5,7 @@
     </div>
     <div class="b-school-list-item_info">
       <div class="b-school-list-item_info__head">
-        <router-link :to="`/school/${school._id}`">
+        <router-link :to="`/${to}/${school._id}`">
           {{school.name}}
         </router-link>
       </div>
@@ -28,7 +28,7 @@
 <script>
 export default {
   name: 'schoolListItem',
-  props: ['school']
+  props: ['school', 'to']
 }
 </script>
 

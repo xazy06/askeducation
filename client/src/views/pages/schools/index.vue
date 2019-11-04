@@ -15,7 +15,7 @@
 
         <div class="s-p_0-15">
           <div v-for="school in schools" v-bind:key="school._id">
-            <school-list-item :school="school"></school-list-item>
+            <school-list-item :to="'school'" :school="school"></school-list-item>
           </div>
         </div>
       </div>

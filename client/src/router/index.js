@@ -105,6 +105,13 @@ router = new Router({
         {name: 'Каталог', link: ''}
       ]
     }),
+    route('/high/school/:alias', 'school', {
+      name: 'Школы',
+      breadcrumb: [
+        {name: 'Высшее образование', link: '/high'},
+        {name: 'Школа', link: ''}
+      ]
+    }),
     route('/programms/course/:type', 'programms', {
       name: 'Программмы',
       banner: 'high.jpg',
@@ -112,12 +119,13 @@ router = new Router({
         {name: 'Программы', link: ''}
       ]
     }),
-    route('/high/school/:alias', 'school', {
-      name: 'Школы',
-      breadcrumb: [
-        {name: 'Высшее образование', link: '/high'},
-        {name: 'Школа', link: ''}
-      ]
+    route('/programm/:id', 'programm', {
+      name: 'Школа',
+      banner: 'high.jpg',
+      breadcrumb: [{
+        name: 'Программа',
+        link: ''
+      }]
     }),
     route(
       '/admin',

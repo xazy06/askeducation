@@ -20,7 +20,7 @@
           </div>
 
           <div class="b-school-sub_under">
-            {{school.age}}
+            {{programm.age}}
           </div>
         </h3>
 
@@ -89,7 +89,7 @@
 
         <h4 class="b-school-descr-head">{{programm.name}}</h4>
 
-        <div v-html="school.description" class="b-school-descr"></div>
+        <div v-html="programm.description" class="b-school-descr"></div>
       </div>
 
       <contact-form></contact-form>
@@ -113,7 +113,7 @@ export default {
   },
   computed: {
     ...mapState('programm', ['programm']),
-    ...mapState('schools', ['school'])
+    ...mapState('school', ['schools'])
   },
   methods: {
     ...mapActions('school', {
