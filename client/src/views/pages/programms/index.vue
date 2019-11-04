@@ -14,7 +14,7 @@
         <lang-filter :filters="filters"></lang-filter>
 
         <div class="s-p_0-15">
-          <div v-for="item in programm" v-bind:key="item._id">
+          <div v-for="item in programms" v-bind:key="item._id">
             <school-list-item :school="item"></school-list-item>
           </div>
         </div>
@@ -43,12 +43,12 @@ export default {
     contactForm
   },
   computed: {
-    ...mapState('programm', ['programm']),
+    ...mapState('programm', ['programms']),
     ...mapState('countries', ['countries'])
   },
   methods: {
     ...mapActions('programm', {
-      getProgramms: action.GET_PROGRAMM
+      get: action.GET_PROGRAMM
     }),
     countryName (id) {
       if (!id || !this.countries.length) {
@@ -66,7 +66,7 @@ export default {
     }
   },
   mounted () {
-    this.getProgramms()
+    this.get()
   }
 }
 </script>
