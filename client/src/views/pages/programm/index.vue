@@ -23,7 +23,6 @@
             {{programm.age}}
           </div>
         </h3>
-
         <div class="b-school-info container-fluid no-gutters">
           <div class="row">
             <div class="col-md-3 col-6 s-ta_r">
