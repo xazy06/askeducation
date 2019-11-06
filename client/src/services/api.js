@@ -4,7 +4,7 @@ import {isUndefined, omitBy} from 'lodash'
 let baseURL = `http://${window.location.hostname}:8081/api/`
 
 if (process.env.NODE_ENV === 'production') {
-  baseURL = `http://${window.location.hostname}api/`
+  baseURL = `/api/`
 }
 
 const instance = axios.create({
