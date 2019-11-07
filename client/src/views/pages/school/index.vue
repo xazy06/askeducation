@@ -98,12 +98,13 @@
 </template>
 
 <script>
-
 import pageTop from '@/views/components/pageTop'
 import page from '@/views/components/page'
 import contactForm from '@/views/components/contactForm'
 import * as action from '@/store/types/actionTypes'
 import {mapState, mapActions} from 'vuex'
+import Vue from 'vue'
+
 export default {
   name: 'school',
   components: {

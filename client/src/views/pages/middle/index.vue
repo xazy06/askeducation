@@ -11,7 +11,7 @@
       <div class="s-mb_100">
         <lang-filter :filters="filters"></lang-filter>
         <div v-for="school in schools" v-bind:key="school._id">
-          <school-list-item :school="school"></school-list-item>
+          <school-list-item :to="'school'" :school="school"></school-list-item>
         </div>
       </div>
       <contact-form/>

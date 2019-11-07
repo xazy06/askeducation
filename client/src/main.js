@@ -7,6 +7,8 @@ import { createStore } from '@/store'
 import router from './router'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 import './custom.scss'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 

@@ -10,7 +10,8 @@
     "cleanp": "rimraf -p",
     "prestart": "npm run -s build",
     "start": "node dist/app.js",
-    "build": "npm run cleanp && npm run clean && mkdir -p dist && babel --ignore client,node_modules,public  ./ -s -D -d dist"
+    "prod": "node dist/app.js",
+    "build": "npm run cleanp && npm run clean && mkdir -p dist && babel --ignore client,node_modules,public  ./ -s -D -d dist && cd dist && mkdir public"
   },
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
