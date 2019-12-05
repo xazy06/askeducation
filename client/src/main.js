@@ -21,6 +21,7 @@ const store = createStore()
 new Vue({
   el: '#app',
   router,
+  BootstrapVue,
   store,
   components: { App },
   template: '<App/>'
