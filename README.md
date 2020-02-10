@@ -4,7 +4,7 @@
 Новый доступ к серверу:
 
 Логин: root
-Пароль: Feesuuk4eetu
+Пароль: iph3ohhoo7un
 
 /usr/lib/virt-sysprep/firstboot.sh start
 Scripts dir: /usr/lib/virt-sysprep/scripts
