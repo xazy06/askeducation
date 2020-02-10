@@ -1,4 +1,7 @@
 node-gyp fix: apt-get install python-dev
+
+
+
 make fix: sudo apt-get install g++
 
 # askeducation
