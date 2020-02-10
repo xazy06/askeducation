@@ -6,11 +6,9 @@ sudo rm -R *
 
 git clone https://github.com/xazy06/askeducation.git && cd askeducation
 
-git checkout staging && git pull
+git checkout staging && git pull && npm run build && pm2 start ecosystem.config.js --env production
 
-npm run build
 
-pm2 start dist
 
 
 # before it build clent
