@@ -1,4 +1,5 @@
 node-gyp fix: apt-get install python-dev
+make fix: sudo apt-get install g++
 
 # askeducation
 Вы установили NodeJS на сервер «Purple Dubnium», IP-адрес 80.78.240.22
