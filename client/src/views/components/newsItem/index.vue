@@ -2,7 +2,7 @@
   <div class="b-article clearfix">
     <div class="b-article-name">
 
-      <strong class="b-article-date">{{date}}</strong>
+      <strong class="b-article-date">{{ moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY')}}</strong>
       <br/>
       <router-link :to="`/news/${id}`">
         <slot/>
@@ -12,9 +12,16 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   name: 'articleItem',
-  props: ['date', 'id']
+  props: ['date', 'id'],
+  computed: {
+    moment () {
+      return moment
+    }
+  }
 }
 </script>
 
