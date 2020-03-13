@@ -67,7 +67,8 @@
           </b-col>
           <b-col sm="4">
             Валюта
-            <b-form-select class="s-mb_10" v-model="model.currency" :options="currencies"></b-form-select>
+<!--            <b-form-select class="s-mb_10" v-model="model.currency" :options="currencies"></b-form-select>-->
+            <b-form-input class="s-mb_10" v-model="model.currency"></b-form-input>
           </b-col>
           <b-col sm="4">
             Ближ. больш. город

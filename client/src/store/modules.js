@@ -1,5 +1,6 @@
 import {camelCase} from 'lodash'
 
+// TODO ref. to arr
 const requireModule = require.context('./modules', false, /\.js$/)
 const modules = requireModule.keys().reduce((acc, fileName) => {
   const moduleName = camelCase(fileName.replace(/(\.\/|\.js)/g, ''))
