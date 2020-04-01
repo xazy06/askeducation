@@ -27,56 +27,56 @@
         <div class="b-school-info container-fluid no-gutters">
           <div class="row">
             <div class="col-md-3 col-6 s-ta_r">
-              <div class="s-mb_10">
+              <div v-if="school.lang.name" class="s-mb_10">
                 <strong>Языки</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.country.name" class="s-mb_10">
                 <strong>Страна</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.accommodations" class="s-mb_10">
                 <strong>Условия проживания</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.food" class="s-mb_10">
                 <strong>Питание</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.starting" class="s-mb_10">
                 <strong>Старт программы</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.lessonsCount" class="s-mb_10">
                 <strong>Количество уроков</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.lessonLength" class="s-mb_10">
                 <strong>Длительность уроков</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.studentsPerGroup" class="s-mb_10">
                 <strong>Человек в группе</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.cost" class="s-mb_10">
                 <strong>Стоимость</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.age" class="s-mb_10">
                 <strong>Возраст</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.livingCost" class="s-mb_10">
                 <strong>Стоимость проживания</strong>
               </div>
-              <div class="s-mb_10">
+              <div v-if="school.closestCity.name" class="s-mb_10">
                 <strong>Ближайший большой город</strong>
               </div>
             </div>
             <div class="col-md-9 col-6 s-uppercase">
-              <div class="s-mb_10">{{school.lang.name}} язык</div>
-              <div class="s-mb_10">{{school.country.name}}</div>
-              <div class="s-mb_10">{{school.accommodations}}</div>
-              <div class="s-mb_10">{{school.food}}</div>
-              <div class="s-mb_10">{{school.starting}}</div>
-              <div class="s-mb_10">{{school.lessonsCount}}</div>
-              <div class="s-mb_10">{{school.lessonLength}}</div>
-              <div class="s-mb_10">{{school.studentsPerGroup}}</div>
-              <div class="s-mb_10">от {{school.cost}} {{school.currency}} за неделю</div>
-              <div class="s-mb_10">{{school.age}}</div>
-              <div class="s-mb_10">{{school.livingCost}}</div>
-              <div class="s-mb_10">{{school.closestCity.name}}</div>
+              <div v-if="school.lang.name" class="s-mb_10">{{school.lang.name}} язык</div>
+              <div v-if="school.country.name" class="s-mb_10">{{school.country.name}}</div>
+              <div v-if="school.accommodations" class="s-mb_10">{{school.accommodations}}</div>
+              <div v-if="school.food" class="s-mb_10">{{school.food}}</div>
+              <div v-if="school.starting" class="s-mb_10">{{school.starting}}</div>
+              <div v-if="school.lessonsCount" class="s-mb_10">{{school.lessonsCount}}</div>
+              <div v-if="school.lessonLength" class="s-mb_10">{{school.lessonLength}}</div>
+              <div v-if="school.studentsPerGroup" class="s-mb_10">{{school.studentsPerGroup}}</div>
+              <div v-if="school.cost" class="s-mb_10">от {{school.cost}} {{school.currency}} за неделю</div>
+              <div v-if="school.age" class="s-mb_10">{{school.age}}</div>
+              <div v-if="school.livingCost" class="s-mb_10">{{school.livingCost}}</div>
+              <div v-if="school.closestCity.name" class="s-mb_10">{{school.closestCity.name}}</div>
             </div>
           </div>
         </div>

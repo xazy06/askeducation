@@ -32,8 +32,6 @@
 
 
 
-
-
 # sudo rm -R *
 # npm install pm2 -g && pm2 update
 # git clone https://github.com/xazy06/askeducation.git && cd askeducation
